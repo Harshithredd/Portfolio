@@ -5,6 +5,9 @@ import React, { useEffect, useRef } from "react";
 import profilePic from "../../public/images/profile/developer-pic-2.jpg";
 import Image from "next/image";
 import { useInView, useMotionValue, useSpring } from "framer-motion";
+import { Skills } from "@/components/Skills";
+import { Experience } from "@/components/Experience";
+import { Education } from "@/components/Education";
 
 const AnimatedNumbers = ({ value }) => {
   const ref = useRef(null);
@@ -40,7 +43,7 @@ const about = () => {
       <main>
         <Layout>
           <AnimatedText text="Passion Fuels Purpose!" />
-          <div className="grid w-full grid-cols-8 gap-16">
+          <div className="grid w-full grid-cols-8 gap-16 mt-[5rem]">
             <div className="col-span-3 felx flex-col items-start justify-start">
               <h2 className="mb-4 test-lg font-bold uppercase text-dark/75">
                 Biography
@@ -67,9 +70,8 @@ const about = () => {
             </div>
             <div
               className="relative col-span-3 h-max rounded-2xl border-2 border-solid  
-                 p-8 border-dark bg-light  "
+                 p-8 border-dark bg-light shadow-[5px_5px_0px_0px] "
             >
-              <div className="absolute top-0 -right-3 -z-10 w-[102%] h-[103%] bg-dark rounded-[2rem]" />
               <Image
                 src={profilePic}
                 alt="profile pic"
@@ -103,6 +105,9 @@ const about = () => {
               </div>
             </div>
           </div>
+          <Skills/>
+          <Experience/>
+          <Education/>
         </Layout>
       </main>
     </>
