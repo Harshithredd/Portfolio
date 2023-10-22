@@ -44,8 +44,9 @@ const about = () => {
         <Layout>
           <AnimatedText text="Passion Fuels Purpose!" />
           <div className="grid w-full grid-cols-8 gap-16 mt-[5rem]">
-            <div className="col-span-3 felx flex-col items-start justify-start">
-              <h2 className="mb-4 test-lg font-bold uppercase text-dark/75">
+            <div className="col-span-3 felx flex-col items-start justify-start dark:text-light">
+              <h2 className="mb-4 test-lg font-bold uppercase text-dark/75
+              dark:text-lime-50">
                 Biography
               </h2>
               <p className="font-medium">
@@ -70,36 +71,42 @@ const about = () => {
             </div>
             <div
               className="relative col-span-3 h-max rounded-2xl border-2 border-solid  
-                 p-8 border-dark bg-light shadow-[5px_5px_0px_0px] "
+                 p-8 border-dark bg-light shadow-[18px_18px_0px_0px] dark:bg-dark
+               dark:shadow-[18px_18px_0px_0px_rgb(245,245,245)] dark:border-light"
             >
               <Image
                 src={profilePic}
                 alt="profile pic"
                 className="w-full h-auto rounded-2xl "
+                priority
+                sizes="(max-width: 768px) 100vw,
+                (max-width: 1200px) 50vw,
+                30vw"
+
               />
             </div>
-            <div className="col-span-2 flex flex-col items-end justify-center">
+            <div className="col-span-2 flex flex-col items-end justify-around">
               <div className="flex flex-col items-end justify-center">
-                <span className="inline-block text-7xl font-bold">
+                <span className="inline-block text-7xl font-bold dark:text-light">
                   <AnimatedNumbers value={5} />+
                 </span>
-                <h2 className="text-xl font-medium capitalize text-dark/75">
+                <h2 className="text-xl font-medium capitalize text-dark/75 dark:text-light/75">
                   satisfied clients
                 </h2>
               </div>
               <div className="flex flex-col items-end justify-center">
-                <span className="inline-block text-7xl font-bold">
+                <span className="inline-block text-7xl font-bold dark:text-light">
                   <AnimatedNumbers value={10} />+
                 </span>
-                <h2 className="text-xl font-medium capitalize text-dark/75">
+                <h2 className="text-xl font-medium capitalize text-dark/75 dark:text-light/75">
                   projects completed
                 </h2>
               </div>
               <div className="flex flex-col items-end justify-center">
-                <span className="inline-block text-7xl font-bold">
+                <span className="inline-block text-7xl font-bold dark:text-light">
                   <AnimatedNumbers value={3} />+
                 </span>
-                <h2 className="text-xl font-medium capitalize text-dark/75">
+                <h2 className="text-xl font-medium capitalize text-dark/75 dark:text-light/75">
                   Years of experience
                 </h2>
               </div>

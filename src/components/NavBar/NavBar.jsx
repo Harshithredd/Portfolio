@@ -6,9 +6,12 @@ import {
   EmailIcon,
   GithubIcon,
   LinkedInIcon,
+  MoonIcon,
+  SunIcon,
   TwitterIcon,
 } from "../Icons/Icons";
 import { motion } from "framer-motion";
+import useThemeSwitch from "../hooks/useThemeSwitch";
 
 const Customlink = ({ href, title, className = "" }) => {
   const router = useRouter();
@@ -18,6 +21,7 @@ const Customlink = ({ href, title, className = "" }) => {
       <span
         className={`h-[1px] bg-dark inline-block absolute -left-0 bottom-0
        group-hover:w-full transition-[width] duration-300 ease-in
+       dark:bg-light
        ${router.asPath === href ? "w-full" : "w-0"} `}
       />
     </Link>
@@ -25,8 +29,16 @@ const Customlink = ({ href, title, className = "" }) => {
 };
 
 const NavBar = () => {
+  const [mode,setMode] = useThemeSwitch();
   return (
-    <header className="flex w-full justify-between px-32 py-8 font-medium">
+    <header className="flex w-full justify-between px-32 py-8 font-medium
+    dark:text-light dark:bg-black 
+      ">
+      <button className="flex flex-col">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       <nav>
         <Customlink href="/" title="Home" className="mr-4" />
         <Customlink href="/about" title="About" className="mx-4" />
@@ -65,15 +77,19 @@ const NavBar = () => {
         >
           <TwitterIcon />
         </motion.a>
-        <motion.a
-          href="/"
-          target="_blank"
-          whileHover={{ y: -2 }}
-          whileTap={{ scale: 0.9 }}
-          className="w-6 mx-3"
+
+        <button
+        className={`ml-3 flex items-center justify-center rounded-full p-1
+        ${mode==='light' ? 'bg-dark text-light' : 'bg-light text-dark'}`}
+        onClick={()=> setMode(mode === "light" ? "dark" : "light")}
         >
-          <EmailIcon />
-        </motion.a>
+
+          {
+            mode === "dark"?
+            <SunIcon className={'fill-dark'}/>
+            : <MoonIcon className={'fill-dark'}/>
+          }          
+        </button>
       </nav>
     </header>
   );

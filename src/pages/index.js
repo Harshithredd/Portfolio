@@ -16,14 +16,18 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="flex item-center text-dark w-full min-h-screen">
-        <Layout className="pt-0">
+      <main className="flex item-center text-dark w-full min-h-screen  dark:text-light">
+        <Layout className="">
           <div className="flex items-center justify-between w-full">
             <div>
               <Image
                 src={profilePic}
                 alt="home-dev-image"
                 className="w-full h-auto"
+                priority
+                sizes="(max-width: 768px) 100vw,
+                (max-width: 1200px) 50vw,
+                50vw"
               />
             </div>
             <div className="w-1/2 flex flex-col items-center self-center">
@@ -41,7 +45,10 @@ export default function Home() {
                 <Link
                   href="/dummy.pdf"
                   target="_blank"
-                  className="bg-dark text-light rounded-lg text-lg p-2.5 px-6 hover:bg-light hover:text-dark border-2 border-transparent hover:border-solid border-black flex "
+                  className="bg-dark text-light rounded-lg text-lg p-2.5 px-6 hover:bg-light
+                   hover:text-dark border-2 border-transparent hover:border-solid hover:border-black flex  
+                   dark:bg-light  dark:text-dark hover:dark:bg-dark hover:dark:text-light
+                   hover:dark:border-light"
                   download={true}
                 >
                   Resume
@@ -50,13 +57,12 @@ export default function Home() {
                 <Link
                   href="mailto:harshithreddy86@gmail.com"
                   target="_blank"
-                  className="ml-4 text-lg font-medium capitalize text-dark underline"
+                  className="ml-4 text-lg font-medium capitalize text-dark underline  dark:text-light"
                 >
                   Contact
                 </Link>
               </div>
             </div>
-            <HireMe />
           </div>
         </Layout>
       </main>

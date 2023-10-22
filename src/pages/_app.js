@@ -23,7 +23,7 @@ const montserrat = Montserrat({
 export default function App({ Component, pageProps }) {
   return (
     <main
-      className={`${montserrat.variable} ${roboto_mono.variable} font-mont`}
+      className={`${montserrat.variable} ${roboto_mono.variable} font-mont dark:bg-dark`}
     >
       <NavBar />
       <Component {...pageProps} />
