@@ -17,38 +17,39 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex item-center text-dark w-full min-h-screen  dark:text-light">
-        <Layout className="">
-          <div className="flex items-center justify-between w-full">
-            <div>
+        <Layout className="md:p-16 sm:pt-8 xl:pt-8">
+          <div className="flex items-center justify-between w-full lg:flex-col">
+            <div className="w-1/2 md:w-full">
               <Image
                 src={profilePic}
                 alt="home-dev-image"
-                className="w-full h-auto"
+                className="w-full h-auto lg:hidden md:inline-block md:w-full"
                 priority
                 sizes="(max-width: 768px) 100vw,
-                (max-width: 1200px) 50vw,
-                50vw"
+                (max-width: 1200px) 100vw,
+                100vw"
               />
-            </div>
-            <div className="w-1/2 flex flex-col items-center self-center">
+            </div>  
+            <div className="w-1/2 flex flex-col items-center self-center lg:w-full">
               <AnimatedText
-                className="!text-left !text-6xl"
+                className="!text-left !text-6xl xl:!text-6xl lg:!text-center lg:!text-6xl md:!text-5xl sm:!text-3xl"
                 text={"Turning Vision Into Reality With Code And Design"}
               />
-              <p className="my-4 text-base font">
+              <p className="my-4 text-base font-medium md:text-sm sm:text-xs lg:text-center">
                 As a skilled full-stack developer, I am dedicated to turning
                 ideas into innovative web applications. Explore my latest
                 projects and articles, showcasing my expertise in React.js and
                 web development.
               </p>
-              <div className="flex items-center self-start mt-2">
+              <div className="flex items-center self-start mt-2 lg:self-center">
                 <Link
                   href="/dummy.pdf"
                   target="_blank"
                   className="bg-dark text-light rounded-lg text-lg p-2.5 px-6 hover:bg-light
                    hover:text-dark border-2 border-transparent hover:border-solid hover:border-black flex  
                    dark:bg-light  dark:text-dark hover:dark:bg-dark hover:dark:text-light
-                   hover:dark:border-light"
+                   hover:dark:border-light
+                   md:p-2 md:px-4 md:text-base"
                   download={true}
                 >
                   Resume
@@ -57,10 +58,12 @@ export default function Home() {
                 <Link
                   href="mailto:harshithreddy86@gmail.com"
                   target="_blank"
-                  className="ml-4 text-lg font-medium capitalize text-dark underline  dark:text-light"
+                  className="ml-4 text-lg font-medium capitalize text-dark underline 
+                   dark:text-light md:text-base "
                 >
                   Contact
                 </Link>
+                <HireMe/>
               </div>
             </div>
           </div>

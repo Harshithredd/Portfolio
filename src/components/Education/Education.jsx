@@ -1,25 +1,34 @@
 import React, { useRef } from "react";
 import { motion, useScroll } from "framer-motion";
-import LiIcon from '../Experience/LiIcon';
+import LiIcon from "../Experience/LiIcon";
 
 const Details = ({ type, time, place, info }) => {
-  const ref =useRef(null);
+  const ref = useRef(null);
   return (
-    <li  ref={ref} className="my-8 first:mt-8 last:mb-4 w-[66%] mx-auto flex flex-col items-center justify-between">
-      
-      <LiIcon reference = {ref}/>
+    <li
+      ref={ref}
+      className="my-8 first:mt-8 last:mb-4 w-[66%] mx-auto flex flex-col items-center justify-between
+    md:w-[80%]"
+    >
+      <LiIcon reference={ref} />
       <motion.div
-      initial={{y:50}}
-      whileInView={{y:0}}
-      transition={{duration : 0.5 , type:'spring'}}
+        initial={{ y: 50 }}
+        whileInView={{ y: 0 }}
+        transition={{ duration: 0.5, type: "spring" }}
       >
-        <h3 className="capitalize font-bold text-2xl dark:text-light">
+        <h3
+          className="capitalize font-bold text-2xl dark:text-light 
+        sm:text-xl xs:text-lg"
+        >
           {type}
         </h3>
-        <span className="capitalize font-medium text-dark/75 dark:text-light/75">
+        <span
+          className="capitalize font-medium text-dark/75 dark:text-light/75 
+        xs:text-sm"
+        >
           {time} | {place}
         </span>
-        <p className="font-medium w-full dark:text-light">{info}</p>
+        <p className="font-medium w-full dark:text-light  md:text-sm">{info}</p>
       </motion.div>
     </li>
   );
@@ -34,17 +43,21 @@ const Education = () => {
   return (
     <>
       <div className="my-64">
-        <h2 className="font-bold text-8xl mb-32 w-full text-center dark:text-light">
+        <h2
+          className="font-bold text-8xl mb-32 w-full text-center dark:text-light
+        lg:!text-7xl sm:!text-6xl xs:!text-4xl sm:!mb-8"
+        >
           Education
         </h2>
         <div className="w=[75%] mx-auto relative">
           <motion.div
-            className="absolute mt-8 left-9 top-0 w-[4px] h-full bg-dark origin-top dark:bg-light"
+            className="absolute mt-8 left-9 top-0 w-[4px] h-full bg-dark origin-top dark:bg-light
+            md:w-[2px] md:left-[30px] xs:left-[20px]"
             ref={ref}
             style={{ scaleY: scrollYProgress }}
           />
 
-          <ul className="w-full flex flex-col items-start justify-between ml-4">
+          <ul className="w-full flex flex-col items-start justify-between ml-4 xs:ml-2">
             <Details
               type="Bachelor Of Science In Computer Science"
               time="2016-2020"
@@ -52,7 +65,7 @@ const Education = () => {
               info="Relevant courses included Data Structures and Algorithms, Computer Systems Engineering, and Artificial 
               Intelligence."
             />
-           <Details
+            <Details
               type="Bachelor Of Science In Computer Science"
               time="2016-2020"
               place="Massachusetts Institute Of Technology (MIT)"
