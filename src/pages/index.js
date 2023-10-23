@@ -29,7 +29,7 @@ export default function Home() {
                 (max-width: 1200px) 100vw,
                 100vw"
               />
-            </div>  
+            </div>
             <div className="w-1/2 flex flex-col items-center self-center lg:w-full">
               <AnimatedText
                 className="!text-left !text-6xl xl:!text-6xl lg:!text-center lg:!text-6xl md:!text-5xl sm:!text-3xl"
@@ -63,7 +63,7 @@ export default function Home() {
                 >
                   Contact
                 </Link>
-                <HireMe/>
+                <HireMe />
               </div>
             </div>
           </div>
