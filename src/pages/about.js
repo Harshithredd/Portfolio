@@ -2,12 +2,13 @@ import { AnimatedText } from "@/components/AnimatedText";
 import { Layout } from "@/components/Layout";
 import Head from "next/head";
 import React, { useEffect, useRef } from "react";
-import profilePic from "../../public/images/profile/developer-pic-2.jpg";
+import profilePic from "../../public/images/profile/developer-pic.png";
 import Image from "next/image";
 import { useInView, useMotionValue, useSpring } from "framer-motion";
 import { Skills } from "@/components/Skills";
 import { Experience } from "@/components/Experience";
 import { Education } from "@/components/Education";
+import TransitionEffect from "@/components/TransitionEffect/TransitionEffect";
 
 const AnimatedNumbers = ({ value }) => {
   const ref = useRef(null);
@@ -40,6 +41,7 @@ const about = () => {
         <title>About Page</title>
         <meta name="description" content="about me" />
       </Head>
+      <TransitionEffect/>
       <main>
         <Layout>
           <AnimatedText
@@ -79,9 +81,15 @@ const about = () => {
             </div>
             <div
               className="relative col-span-3 h-max rounded-2xl border-2 border-solid  
-                 p-8 border-dark bg-light shadow-[18px_18px_0px_0px] dark:bg-dark
-               dark:shadow-[18px_18px_0px_0px_rgb(245,245,245)] dark:border-light
-               md:col-span-4 md:order-1"
+                 p-8 border-dark bg-light dark:bg-dark
+                 dark:border-light
+               md:col-span-4 md:order-1
+               shadow-[18px_18px_0px_0px] 
+               dark:shadow-[18px_18px_0px_0px_rgb(245,245,245)]
+               md:dark:shadow-[10px_10px_0px_0px_rgb(245,245,245)]
+               lg:dark:shadow-[15px_15px_0px_0px_rgb(245,245,245)]
+               md:shadow-[10px_10px_0px_0px]
+               lg:shadow-[15px_15px_0px_0px]"
             >
               <Image
                 src={profilePic}
@@ -104,8 +112,10 @@ const about = () => {
                 >
                   <AnimatedNumbers value={5} />+
                 </span>
-                <h2 className="text-xl font-medium capitalize text-dark/75 dark:text-light/75 
-                xs:text-sm sm:text-base md:text-lg xl:text-center">
+                <h2
+                  className="text-xl font-medium capitalize text-dark/75 dark:text-light/75 
+                xs:text-sm sm:text-base md:text-lg xl:text-center"
+                >
                   satisfied clients
                 </h2>
               </div>
@@ -116,8 +126,10 @@ const about = () => {
                 >
                   <AnimatedNumbers value={10} />+
                 </span>
-                <h2 className="text-xl font-medium capitalize text-dark/75 dark:text-light/75  
-                xs:text-sm sm:text-base md:text-lg xl:text-center">
+                <h2
+                  className="text-xl font-medium capitalize text-dark/75 dark:text-light/75  
+                xs:text-sm sm:text-base md:text-lg xl:text-center"
+                >
                   projects completed
                 </h2>
               </div>
@@ -128,8 +140,10 @@ const about = () => {
                 >
                   <AnimatedNumbers value={3} />+
                 </span>
-                <h2 className="text-xl font-medium capitalize text-dark/75 dark:text-light/75 
-                xs:text-sm sm:text-base md:text-lg xl:text-center">
+                <h2
+                  className="text-xl font-medium capitalize text-dark/75 dark:text-light/75 
+                xs:text-sm sm:text-base md:text-lg xl:text-center"
+                >
                   Years of experience
                 </h2>
               </div>

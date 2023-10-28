@@ -7,6 +7,7 @@ import { AnimatedText } from "@/components/AnimatedText";
 import Link from "next/link";
 import { LinkArrow } from "@/components/Icons/Icons";
 import { HireMe } from "@/components/HireMe";
+import TransitionEffect from "@/components/TransitionEffect/TransitionEffect";
 export default function Home() {
   return (
     <>
@@ -16,6 +17,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+    <TransitionEffect/>
       <main className="flex item-center text-dark w-full min-h-screen  dark:text-light">
         <Layout className="md:p-16 sm:pt-8 xl:pt-8">
           <div className="flex items-center justify-between w-full lg:flex-col">

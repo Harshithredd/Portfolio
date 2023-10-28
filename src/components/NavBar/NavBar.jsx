@@ -67,7 +67,7 @@ const NavBar = () => {
   return (
     <header
       className="flex w-full justify-between px-32 py-8 font-medium
-    dark:text-light dark:bg-black relative z-10 lg:px-16 md:px-12 sm:px-8 lg:py-10
+    dark:text-light  z-10 lg:px-16 md:px-12 sm:px-8 lg:py-10 fixed
       "
     >
       <button

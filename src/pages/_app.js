@@ -1,7 +1,9 @@
 import { Footer } from "@/components/Footer";
 import NavBar from "@/components/NavBar/NavBar";
 import "@/styles/globals.css";
+import { AnimatePresence } from "framer-motion";
 import { Montserrat, Inter, Roboto_Mono } from "next/font/google";
+import { useRouter } from "next/router";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -21,12 +23,16 @@ const montserrat = Montserrat({
 });
 
 export default function App({ Component, pageProps }) {
+  const router = useRouter();
   return (
     <main
       className={`${montserrat.variable} ${roboto_mono.variable} font-mont dark:bg-dark`}
     >
       <NavBar />
-      <Component {...pageProps} />
+      <AnimatePresence mode="wait">
+        <Component key={router.asPath} {...pageProps} />
+      </AnimatePresence>
+
       <Footer />
     </main>
   );
