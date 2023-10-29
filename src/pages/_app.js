@@ -26,7 +26,7 @@ export default function App({ Component, pageProps }) {
   const router = useRouter();
   return (
     <main
-      className={`${montserrat.variable} ${roboto_mono.variable} font-mont dark:bg-dark`}
+      className={`${montserrat.variable} ${roboto_mono.variable} font-mont dark:bg-dark bg-light w-full min-h-screen`}
     >
       <NavBar />
       <AnimatePresence mode="wait">

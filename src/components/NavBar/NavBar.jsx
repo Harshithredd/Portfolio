@@ -67,7 +67,7 @@ const NavBar = () => {
   return (
     <header
       className="flex w-full justify-between px-32 py-8 font-medium
-    dark:text-light  z-10 lg:px-16 md:px-12 sm:px-8 lg:py-10 fixed
+    dark:text-light  z-10 lg:px-16 md:px-12 sm:px-8 lg:py-10 relative
       "
     >
       <button
@@ -90,6 +90,7 @@ const NavBar = () => {
         ></span>
       </button>
       <div className="w-full flex justify-between items-center lg:hidden">
+      <Logo />
         <nav>
           <Customlink href="/" title="Home" className="mr-4" />
           <Customlink href="/about" title="About" className="mx-4" />
@@ -208,9 +209,6 @@ const NavBar = () => {
           </nav>
         </motion.div>
       ) : null}
-      <div className="absolute left-[50%] translate-x-[-50%] top-4">
-        <Logo />
-      </div>
     </header>
   );
 };
