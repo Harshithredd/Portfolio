@@ -1,14 +1,16 @@
 import Head from "next/head";
 import Image from "next/image";
-import styles from "@/styles/Home.module.css";
 import { Layout } from "@/components/Layout";
 import profilePic from "../../public/images/profile/developer-pic-1.png";
 import { AnimatedText } from "@/components/AnimatedText";
 import Link from "next/link";
 import { LinkArrow } from "@/components/Icons/Icons";
-import { HireMe } from "@/components/HireMe";
-import TransitionEffect from "@/components/TransitionEffect/TransitionEffect";
+import { About } from "@/components/About";
+import ProjectsWrapper from "@/components/ProjectsWrapper/ProjectsWrapper";
+import TransitionEffectVertical from "@/components/TransitionEffectVertical/TransitionEffectVertical";
+
 export default function Home() {
+
   return (
     <>
       <Head>
@@ -17,11 +19,14 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-    <TransitionEffect/>
-      <main className="flex item-center text-dark w-full min-h-screen  dark:text-light">
-        <Layout className="md:p-16 sm:pt-8 xl:pt-8">
+      <TransitionEffectVertical/>
+      <main
+        className="flex items-center text-dark w-full min-h-screen  dark:text-light"
+        id="Home-section"
+      >
+        <Layout className="">
           <div className="flex items-center justify-between w-full lg:flex-col">
-            <div className="w-1/2 md:w-full">
+            {/* <div className="w-1/2 md:w-full">
               <Image
                 src={profilePic}
                 alt="home-dev-image"
@@ -31,21 +36,21 @@ export default function Home() {
                 (max-width: 1200px) 100vw,
                 100vw"
               />
-            </div>
-            <div className="w-1/2 flex flex-col items-center self-center lg:w-full">
+            </div> */}
+            <div className="w-full flex flex-col items-center self-center lg:w-full">
               <AnimatedText
-                className="!text-left !text-6xl xl:!text-6xl lg:!text-center lg:!text-6xl md:!text-5xl sm:!text-3xl"
-                text={"Turning Vision Into Reality With Code And Design"}
+                className=" !text-6xl xl:!text-6xl lg:!text-center lg:!text-6xl md:!text-6xl sm:!text-4xl xs:!text-3xl"
+                text={"Hi, I'm Harshith"}
               />
-              <p className="my-4 text-base font-medium md:text-sm sm:text-xs lg:text-center">
+              <p className="my-4 lg:mx-0 mx-32 text-base font-medium md:text-sm sm:text-xs text-center">
                 As a skilled full-stack developer, I am dedicated to turning
                 ideas into innovative web applications. Explore my latest
-                projects and articles, showcasing my expertise in React.js and
+                projects and articles, showcasing my expertise in Next.js and
                 web development.
               </p>
-              <div className="flex items-center self-start mt-2 lg:self-center">
+              <div className="flex items-center self-center mt-2 lg:self-center">
                 <Link
-                  href="/dummy.pdf"
+                  href="/HARSHITH_G_S_CV.pdf"
                   target="_blank"
                   className="bg-dark text-light rounded-lg text-lg p-2.5 px-6 hover:bg-light
                    hover:text-dark border-2 border-transparent hover:border-solid hover:border-black flex  
@@ -71,6 +76,8 @@ export default function Home() {
           </div>
         </Layout>
       </main>
+      <About />
+      <ProjectsWrapper />
     </>
   );
 }
