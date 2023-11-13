@@ -1,9 +1,8 @@
-import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Logo } from "../Logo";
 import { useRouter } from "next/router";
+import { Link as ScrollLink } from "react-scroll";
 import {
-  EmailIcon,
   GithubIcon,
   LinkedInIcon,
   MoonIcon,
@@ -13,10 +12,18 @@ import {
 import { motion } from "framer-motion";
 import useThemeSwitch from "../hooks/useThemeSwitch";
 
-const Customlink = ({ href, title, className = "" }) => {
+const Customlink = ({ href, title, offset, className = "" }) => {
   const router = useRouter();
   return (
-    <Link href={href} className={`${className} relative group  `}>
+    <ScrollLink
+      to={href}
+      spy={true}
+      offset={offset}
+      duration={500}
+      smooth={true}
+      // href={href}
+      className={`${className} relative group cursor-pointer `}
+    >
       {title}
       <span
         className={`h-[1px] bg-dark inline-block absolute -left-0 bottom-0
@@ -24,7 +31,7 @@ const Customlink = ({ href, title, className = "" }) => {
        dark:bg-light
        ${router.asPath === href ? "w-full" : "w-0"} `}
       />
-    </Link>
+    </ScrollLink>
   );
 };
 
@@ -32,19 +39,24 @@ const CustomlinkMobile = ({
   href,
   title,
   handelHamburgerClick,
+  offset,
   className = "",
 }) => {
   const router = useRouter();
 
   const handleIsOpen = () => {
-    router.push(href);
+    // router.push(href);
     handelHamburgerClick();
   };
   return (
-    <button
-      href={href}
-      className={`${className} relative group`}
+    <ScrollLink
+      to={href}
+      spy={true}
+      offset={offset}
+      duration={500}
+      smooth={true}
       onClick={handleIsOpen}
+      className={`${className} relative group  cursor-pointer`}
     >
       {title}
       <span
@@ -53,52 +65,98 @@ const CustomlinkMobile = ({
        dark:bg-light
        ${router.asPath === href ? "w-full" : "w-0"} `}
       />
-    </button>
+    </ScrollLink>
   );
 };
+
+const navVariants = {
+  show: {
+    opacity: 1,
+    y: 0,
+  },
+  hide: {
+    opacity: 0,
+    y: '-100%',
+  },
+}
 
 const NavBar = () => {
   const [mode, setMode] = useThemeSwitch();
   const [isOpen, setIsOpen] = useState(false);
+  const [show, setShow] = useState(true);
+  const [prevScrollPos, setPreviousScrollPos] = useState(0);
 
   const handelHamburgerClick = () => {
     setIsOpen(!isOpen);
   };
+
+  const handleScroll = () => {
+    const currenttScrollPos = window.scrollY;
+    if (currenttScrollPos > prevScrollPos) {
+      setShow(false);
+    } else {
+      setShow(true);
+    }
+    setPreviousScrollPos(currenttScrollPos);
+  };
+  
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  });
+
   return (
-    <header
-      className="flex w-full justify-between px-32 py-8 font-medium
-    dark:text-light  z-10 lg:px-16 md:px-12 sm:px-8 lg:py-10 relative
-      "
+    <motion.header
+      className={`flex w-full justify-between px-32 py-8 font-medium
+    dark:text-light  z-10 lg:px-16 md:px-12 sm:px-8 lg:py-10 fixed
+      lg:backdrop-blur-0 top-0`}
+     animate={show ? 'show' : 'hide'}
+     variants={navVariants}
     >
       <button
-        className="flex-col justify-center items-center hidden lg:flex"
+        className="flex-col justify-center items-center hidden lg:flex h-8 w-9 rounded-md bg-dark/90 dark:bg-light/90"
         onClick={handelHamburgerClick}
       >
         <span
-          className={`bg-dark dark:bg-light transition-all duration-300 ease-out  block h-0.5 w-6 rounded-sm ${
+          className={`bg-light dark:bg-dark transition-all duration-300 ease-out  block h-0.5 w-6 rounded-sm ${
             isOpen ? "rotate-45 translate-y-1" : "-translate-y-0.5"
           }`}
         ></span>
         <span
-          className={`bg-dark dark:bg-light transition-all duration-300 ease-out  block h-0.5 w-6 rounded-sm m-0.5 
+          className={`bg-light dark:bg-dark transition-all duration-300 ease-out  block h-0.5 w-6 rounded-sm m-0.5 
           ${isOpen ? "opacity-0" : "opacity-100"}`}
         ></span>
         <span
-          className={`bg-dark dark:bg-light transition-all duration-300 ease-out  block h-0.5 w-6 rounded-sm ${
+          className={`bg-light dark:bg-dark transition-all duration-300 ease-out  block h-0.5 w-6 rounded-sm ${
             isOpen ? "-rotate-45 -translate-y-1" : "translate-y-0.5"
           }`}
         ></span>
       </button>
       <div className="w-full flex justify-between items-center lg:hidden">
-      <Logo />
+        <Logo />
         <nav>
-          <Customlink href="/" title="Home" className="mr-4" />
-          <Customlink href="/about" title="About" className="mx-4" />
-          <Customlink href="/projects" title="Projects" className="mx-4" />
+          <Customlink
+            href="About-section"
+            title="About"
+            className="mx-4"
+            offset={0}
+          />
+          <Customlink
+            href="Experience-section"
+            title="Experience"
+            className="mx-4"
+            offset={-150}
+          />
+          <Customlink
+            href="Projects-section"
+            title="Projects"
+            className="mx-4"
+            offset={0}
+          />
         </nav>
         <nav className="flex justify-center items-center">
           <motion.a
-            href="/"
+            href="https://www.linkedin.com/in/harshith-g-s-496636204/"
             target="_blank"
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.9 }}
@@ -107,7 +165,7 @@ const NavBar = () => {
             <LinkedInIcon />
           </motion.a>
           <motion.a
-            href="/"
+            href="https://github.com/Harshithredd"
             target="_blank"
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.9 }}
@@ -116,7 +174,7 @@ const NavBar = () => {
             <GithubIcon />
           </motion.a>
           <motion.a
-            href="/"
+            href="https://twitter.com/Harsheeeh"
             target="_blank"
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.9 }}
@@ -140,27 +198,35 @@ const NavBar = () => {
       </div>
       {isOpen ? (
         <motion.div
-          className="min-w-[70vw] z-30 flex flex-col justify-between items-center fixed top-1/2 left-1/2 -translate-x-1/2 
-          -translate-y-1/2 bg-dark/90 dark:bg-light/75 backdrop-blur-md py-32 
-          lg:py-12 dark:text-dark text-light"
-          initial={{scale:0, opacity:0, x:"-50%", y :"-50%"}}
-          animate={{scale:1, opacity:1 }}
+          className="min-w-[70vw] z-30 flex flex-col justify-between items-center 
+          absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+           bg-dark/95 dark:bg-light/95 backdrop-blur-md py-32 
+          lg:py-12 dark:text-dark text-light "
+          initial={{ scale: 0, opacity: 0, x: "-50%", y: "-50%" }}
+          animate={{ scale: 1, opacity: 1, y: "30%" }}
         >
           <nav className="flex flex-col justify-center items-center text-center">
             <CustomlinkMobile
-              href="/"
+              href="Home-section"
               title="Home"
               className="my-2"
               handelHamburgerClick={handelHamburgerClick}
             />
             <CustomlinkMobile
-              href="/about"
+              href="About-section"
               title="About"
               className="my-2"
               handelHamburgerClick={handelHamburgerClick}
             />
             <CustomlinkMobile
-              href="/projects"
+              title="Experience"
+              href="Experience-section"
+              className="my-2"
+              handelHamburgerClick={handelHamburgerClick}
+              offset={-120}
+            />
+            <CustomlinkMobile
+              href="Projects-section"
               title="Projects"
               className="my-2"
               handelHamburgerClick={handelHamburgerClick}
@@ -209,7 +275,7 @@ const NavBar = () => {
           </nav>
         </motion.div>
       ) : null}
-    </header>
+    </motion.header>
   );
 };
 

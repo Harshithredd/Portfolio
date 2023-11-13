@@ -7,8 +7,8 @@ const Details = ({ type, time, place, info }) => {
   return (
     <li
       ref={ref}
-      className="my-8 first:mt-8 last:mb-4 w-[66%] mx-auto flex flex-col items-center justify-between
-    md:w-[80%]"
+      className="my-8 first:mt-8 last:mb-4 w-[66%] mx-auto flex flex-col items-start justify-between
+    md:w-[80%] text-left"
     >
       <LiIcon reference={ref} />
       <motion.div
@@ -49,7 +49,7 @@ const Education = () => {
         >
           Education
         </h2>
-        <div className="w=[75%] mx-auto relative">
+        <div className="w-[75%] mx-auto relative lg:w-[90%] md:w-full ">
           <motion.div
             className="absolute mt-8 left-9 top-0 w-[4px] h-full bg-dark origin-top dark:bg-light
             md:w-[2px] md:left-[30px] xs:left-[20px]"
@@ -59,25 +59,22 @@ const Education = () => {
 
           <ul className="w-full flex flex-col items-start justify-between ml-4 xs:ml-2">
             <Details
-              type="Bachelor Of Science In Computer Science"
+              type="Bachelor Of Engineering in Information Science"
               time="2016-2020"
-              place="Massachusetts Institute Of Technology (MIT)"
-              info="Relevant courses included Data Structures and Algorithms, Computer Systems Engineering, and Artificial 
-              Intelligence."
+              place="Acharya institute of technology"
+              info="7.91 CGPA."
             />
             <Details
-              type="Bachelor Of Science In Computer Science"
-              time="2016-2020"
-              place="Massachusetts Institute Of Technology (MIT)"
-              info="Relevant courses included Data Structures and Algorithms, Computer Systems Engineering, and Artificial 
-              Intelligence."
+              type="Class XII"
+              time="2014-2016"
+              place=" Sahyadri PU College"
+              info="90.5%"
             />
             <Details
-              type="Bachelor Of Science In Computer Science"
-              time="2016-2020"
-              place="Massachusetts Institute Of Technology (MIT)"
-              info="Relevant courses included Data Structures and Algorithms, Computer Systems Engineering, and Artificial 
-              Intelligence."
+              type="Class X"
+              time="2013-2014"
+              place="Jain International Residential School (JIRS)"
+              info="8.60 CGPA"
             />
           </ul>
         </div>
