@@ -28,7 +28,7 @@ const ProjectsWrapper = () => {
               img={projectCoverXflix}
               link="https://xflixtwo.netlify.app/"
               github="https://github.com/Harshithredd/Xflix_frontend"
-              direction={-500}
+              direction="-50%"
             />
           </div>
           <div className="col-span-12">
@@ -39,7 +39,7 @@ const ProjectsWrapper = () => {
               img={projectCoverQkart}
               link="https://qkarttwo.netlify.app/"
               github="https://github.com/Harshithredd/Qkart_Frontend"
-              direction={500}
+              direction="50%"
             />
           </div>
           <div className="col-span-12">
@@ -51,7 +51,7 @@ const ProjectsWrapper = () => {
               img={projectCoverQtrip}
               link="https://qtriptwo.netlify.app/"
               github="https://github.com/Harshithredd/Qtrip-dynamic-frontend"
-              direction={-500}
+              direction="-50%"
             />
           </div>
 
@@ -62,7 +62,7 @@ const ProjectsWrapper = () => {
               img={projectCoverXboard}
               link="https://newsandboard.netlify.app/"
               github="https://github.com/Harshithredd/NewsFeed-Xboard"
-              direction={-500}
+              direction="-50%"
             />
           </div>
           <div className="col-span-6 sm:col-span-12">
@@ -72,7 +72,7 @@ const ProjectsWrapper = () => {
               img={projectCoverAdmin}
               link="https://admin-ui-harshithgs.netlify.app/"
               github="https://github.com/Harshithredd/Admin_UI"
-              direction={500}
+              direction="50%"
             />
           </div>
         </div>
