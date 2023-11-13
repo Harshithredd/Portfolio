@@ -17,9 +17,9 @@ const Project = ({ type, title, img, link, github, direction }) => {
       md:shadow-[8px_8px_0px_0px]
       lg:shadow-[12px_12px_0px_0px]
       xs:p-4"
-      initial={{x:direction}}
-      whileInView={{x:0}}
-      transition={{duration : 1 , type:'spring'}}
+      initial={{ x: direction, visibility:"hidden"}}
+      whileInView={{ x: 0, visibility:"visible"}}
+      transition={{duration : 0.5 , type:'spring'}}
     >
       <Link
         href={link}

@@ -27,7 +27,7 @@ export default function App({ Component, pageProps }) {
   return (
     <main
       className={`${montserrat.variable} ${roboto_mono.variable} font-mont
-       dark:bg-dark bg-light w-full min-h-screen overflow-x-auto`}
+       dark:bg-dark bg-light w-full min-h-screen overflow-x-hidden`}
     >
       <NavBar />
       <AnimatePresence mode="wait">

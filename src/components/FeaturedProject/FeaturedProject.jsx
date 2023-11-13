@@ -24,8 +24,8 @@ const FeaturedProject = ({
         md:shadow-[8px_8px_0px_0px]
         lg:shadow-[12px_12px_0px_0px]
         lg:flex-col lg:p-8 xs:rounded-2xl xs:rounded-br-3xl xs:p-4"
-      initial={{ x: direction,}}
-      whileInView={{ x: 0, }}
+      initial={{ x: direction, visibility:"hidden"}}
+      whileInView={{ x: 0, visibility:"visible"}}
       transition={{ duration: 1, type: "spring" }}
     >
       <Link
