@@ -1,15 +1,28 @@
 import Head from "next/head";
-import Image from "next/image";
-import { Layout } from "@/components/Layout";
-import profilePic from "../../public/images/profile/developer-pic-1.png";
-import { AnimatedText } from "@/components/AnimatedText";
-import Link from "next/link";
-import { LinkArrow } from "@/components/Icons/Icons";
 import { About } from "@/components/About";
 import ProjectsWrapper from "@/components/ProjectsWrapper/ProjectsWrapper";
 import TransitionEffectVertical from "@/components/TransitionEffectVertical/TransitionEffectVertical";
+import { Landing } from "@/components/Landing";
+import { useEffect, useState } from "react";
+import { AnimatePresence } from 'framer-motion';
+import Intro from "@/components/Intro/Intro";
 
 export default function Home() {
+
+  
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect( () => {
+    (
+      async () => {
+          setTimeout( () => {
+            setIsLoading(false);
+            document.body.style.cursor = 'default'
+            window.scrollTo(0,0);
+          }, 2000)
+      }
+    )()
+  }, [])
 
   return (
     <>
@@ -19,63 +32,11 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <TransitionEffectVertical/>
-      <main
-        className="flex items-center text-dark w-full min-h-screen  dark:text-light"
-        id="Home-section"
-      >
-        <Layout className="">
-          <div className="flex items-center justify-between w-full lg:flex-col">
-            {/* <div className="w-1/2 md:w-full">
-              <Image
-                src={profilePic}
-                alt="home-dev-image"
-                className="w-full h-auto lg:hidden md:inline-block md:w-full"
-                priority
-                sizes="(max-width: 768px) 100vw,
-                (max-width: 1200px) 100vw,
-                100vw"
-              />
-            </div> */}
-            <div className="w-full flex flex-col items-center self-center lg:w-full">
-              <AnimatedText
-                className=" !text-6xl xl:!text-6xl lg:!text-center lg:!text-6xl md:!text-6xl sm:!text-4xl xs:!text-3xl"
-                text={"Hi, I'm Harshith"}
-              />
-              <p className="my-4 lg:mx-0 mx-32 text-base font-medium md:text-sm sm:text-xs text-center">
-                As a skilled full-stack developer, I am dedicated to turning
-                ideas into innovative web applications. Explore my latest
-                projects and articles, showcasing my expertise in Next.js and
-                web development.
-              </p>
-              <div className="flex items-center self-center mt-2 lg:self-center">
-                <Link
-                  href="/HARSHITH_G_S_CV.pdf"
-                  target="_blank"
-                  className="bg-dark text-light rounded-lg text-lg p-2.5 px-6 hover:bg-light
-                   hover:text-dark border-2 border-transparent hover:border-solid hover:border-black flex  
-                   dark:bg-light  dark:text-dark hover:dark:bg-dark hover:dark:text-light
-                   hover:dark:border-light
-                   md:p-2 md:px-4 md:text-base"
-                  download={true}
-                >
-                  Resume
-                  <LinkArrow className={"!w-6 ml-1"} />
-                </Link>
-                <Link
-                  href="mailto:harshithreddy86@gmail.com"
-                  target="_blank"
-                  className="ml-4 text-lg font-medium capitalize text-dark underline 
-                   dark:text-light md:text-base "
-                >
-                  Contact
-                </Link>
-                {/* <HireMe /> */}
-              </div>
-            </div>
-          </div>
-        </Layout>
-      </main>
+      <AnimatePresence mode="wait">
+      {isLoading && <Intro/>}
+      </AnimatePresence>
+      <TransitionEffectVertical/>   
+      <Landing/>
       <About />
       <ProjectsWrapper />
     </>
