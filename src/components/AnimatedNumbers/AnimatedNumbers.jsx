@@ -12,9 +12,6 @@ const AnimatedNumbers = ({ value }) => {
       if (isInView) {
         motionValue.set(value);
       }
-      if(!isInView){
-        motionValue.set(0);
-      }
     }, [isInView, value, motionValue]);
   
     useEffect(() => {

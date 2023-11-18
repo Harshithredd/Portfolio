@@ -27,6 +27,7 @@ const FeaturedProject = ({
       initial={{ x: direction, visibility:"hidden"}}
       whileInView={{ x: 0, visibility:"visible"}}
       transition={{ duration: 1, type: "spring" }}
+      viewport={{once:true}}
     >
       <Link
         href={link}

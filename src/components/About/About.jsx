@@ -11,7 +11,7 @@ import profilePicCover from "../../../public/images/profile/developer-pic-2.jpg"
 const About = () => {
   return (
     <div id="About-section">
-      <Layout>
+      <Layout className="!pt-0">
         <AnimatedText
           text="Passion Fuels Purpose! "
           className="mb-16 lg:!text-7xl sm:!text-6xl xs:!text-4xl sm:!mb-8 "

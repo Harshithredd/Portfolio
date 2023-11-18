@@ -20,6 +20,7 @@ const Project = ({ type, title, img, link, github, direction }) => {
       initial={{ x: direction, visibility:"hidden"}}
       whileInView={{ x: 0, visibility:"visible"}}
       transition={{duration : 0.5 , type:'spring'}}
+      viewport={{once:true}}
     >
       <Link
         href={link}

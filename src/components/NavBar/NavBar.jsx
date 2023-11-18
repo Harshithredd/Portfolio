@@ -76,9 +76,9 @@ const navVariants = {
   },
   hide: {
     opacity: 0,
-    y: '-100%',
+    y: "-100%",
   },
-}
+};
 
 const NavBar = () => {
   const [mode, setMode] = useThemeSwitch();
@@ -99,164 +99,89 @@ const NavBar = () => {
     }
     setPreviousScrollPos(currenttScrollPos);
   };
-  
+
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   });
 
   return (
-    <motion.header
-      className={`flex w-full justify-between px-32 py-8 font-medium
+    <>
+      <motion.header
+        className={`flex w-full justify-between px-32 py-8 font-medium
     dark:text-light  z-10 lg:px-16 md:px-12 sm:px-8 lg:py-10 fixed
       lg:backdrop-blur-0 top-0`}
-     animate={show ? 'show' : 'hide'}
-     variants={navVariants}
-    >
-      <button
-        className="flex-col justify-center items-center hidden lg:flex h-8 w-9 rounded-md bg-dark/90 dark:bg-light/90"
-        onClick={handelHamburgerClick}
       >
-        <span
-          className={`bg-light dark:bg-dark transition-all duration-300 ease-out  block h-0.5 w-6 rounded-sm ${
-            isOpen ? "rotate-45 translate-y-1" : "-translate-y-0.5"
-          }`}
-        ></span>
-        <span
-          className={`bg-light dark:bg-dark transition-all duration-300 ease-out  block h-0.5 w-6 rounded-sm m-0.5 
-          ${isOpen ? "opacity-0" : "opacity-100"}`}
-        ></span>
-        <span
-          className={`bg-light dark:bg-dark transition-all duration-300 ease-out  block h-0.5 w-6 rounded-sm ${
-            isOpen ? "-rotate-45 -translate-y-1" : "translate-y-0.5"
-          }`}
-        ></span>
-      </button>
-      <div className="w-full flex justify-between items-center lg:hidden">
-        <Logo />
-        <nav>
-          <Customlink
-            href="About-section"
-            title="About"
-            className="mx-4"
-            offset={0}
-          />
-          <Customlink
-            href="Experience-section"
-            title="Experience"
-            className="mx-4"
-            offset={-150}
-          />
-          <Customlink
-            href="Projects-section"
-            title="Projects"
-            className="mx-4"
-            offset={0}
-          />
-        </nav>
-        <nav className="flex justify-center items-center">
-          <motion.a
-            href="https://www.linkedin.com/in/harshith-g-s-496636204/"
-            target="_blank"
-            whileHover={{ y: -2 }}
-            whileTap={{ scale: 0.9 }}
-            className="w-6 mx-3"
-          >
-            <LinkedInIcon />
-          </motion.a>
-          <motion.a
-            href="https://github.com/Harshithredd"
-            target="_blank"
-            whileHover={{ y: -2 }}
-            whileTap={{ scale: 0.9 }}
-            className="w-6 mx-3"
-          >
-            <GithubIcon />
-          </motion.a>
-          <motion.a
-            href="https://twitter.com/Harsheeeh"
-            target="_blank"
-            whileHover={{ y: -2 }}
-            whileTap={{ scale: 0.9 }}
-            className="w-6 mx-3"
-          >
-            <TwitterIcon />
-          </motion.a>
-
-          <button
-            className={`ml-3 flex items-center justify-center rounded-full p-1
-        ${mode === "light" ? "bg-dark text-light" : "bg-light text-dark"}`}
-            onClick={() => setMode(mode === "light" ? "dark" : "light")}
-          >
-            {mode === "dark" ? (
-              <SunIcon className={"fill-dark"} />
-            ) : (
-              <MoonIcon className={"fill-dark"} />
-            )}
-          </button>
-        </nav>
-      </div>
-      {isOpen ? (
-        <motion.div
-          className="min-w-[70vw] z-30 flex flex-col justify-between items-center 
-          absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-           bg-dark/95 dark:bg-light/95 backdrop-blur-md py-32 
-          lg:py-12 dark:text-dark text-light "
-          initial={{ scale: 0, opacity: 0, x: "-50%", y: "-50%" }}
-          animate={{ scale: 1, opacity: 1, y: "30%" }}
+        <button
+          className="flex-col justify-center items-center hidden lg:flex h-8 w-9 rounded-md bg-dark/90 dark:bg-light/90"
+          onClick={handelHamburgerClick}
         >
-          <nav className="flex flex-col justify-center items-center text-center">
-            <CustomlinkMobile
-              href="Home-section"
-              title="Home"
-              className="my-2"
-              handelHamburgerClick={handelHamburgerClick}
-            />
-            <CustomlinkMobile
+          <span
+            className={`bg-light dark:bg-dark transition-all duration-300 ease-out  block h-0.5 w-6 rounded-sm ${
+              isOpen ? "rotate-45 translate-y-1" : "-translate-y-0.5"
+            }`}
+          ></span>
+          <span
+            className={`bg-light dark:bg-dark transition-all duration-300 ease-out  block h-0.5 w-6 rounded-sm m-0.5 
+          ${isOpen ? "opacity-0" : "opacity-100"}`}
+          ></span>
+          <span
+            className={`bg-light dark:bg-dark transition-all duration-300 ease-out  block h-0.5 w-6 rounded-sm ${
+              isOpen ? "-rotate-45 -translate-y-1" : "translate-y-0.5"
+            }`}
+          ></span>
+        </button>
+        <motion.div
+          className="w-full flex justify-between items-center lg:hidden"
+          animate={show ? "show" : "hide"}
+          variants={navVariants}
+        >
+          <Logo />
+          <nav>
+            <Customlink
               href="About-section"
               title="About"
-              className="my-2"
-              handelHamburgerClick={handelHamburgerClick}
+              className="mx-4"
+              offset={-150}
             />
-            <CustomlinkMobile
-              title="Experience"
+            <Customlink
               href="Experience-section"
-              className="my-2"
-              handelHamburgerClick={handelHamburgerClick}
-              offset={-120}
+              title="Experience"
+              className="mx-4"
+              offset={-150}
             />
-            <CustomlinkMobile
+            <Customlink
               href="Projects-section"
               title="Projects"
-              className="my-2"
-              handelHamburgerClick={handelHamburgerClick}
+              className="mx-4"
+              offset={0}
             />
           </nav>
-          <nav className="flex justify-center items-center mt-2">
+          <nav className="flex justify-center items-center">
             <motion.a
-              href="/"
+              href="https://www.linkedin.com/in/harshith-g-s-496636204/"
               target="_blank"
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.9 }}
-              className="w-6 mx-3 sm:mx-1 "
+              className="w-6 mx-3"
             >
               <LinkedInIcon />
             </motion.a>
             <motion.a
-              href="/"
+              href="https://github.com/Harshithredd"
               target="_blank"
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.9 }}
-              className="w-6 mx-3 sm:mx-1 "
+              className="w-6 mx-3"
             >
               <GithubIcon />
             </motion.a>
             <motion.a
-              href="/"
+              href="https://twitter.com/Harsheeeh"
               target="_blank"
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.9 }}
-              className="w-6 mx-3 sm:mx-1 "
+              className="w-6 mx-3"
             >
               <TwitterIcon />
             </motion.a>
@@ -274,8 +199,90 @@ const NavBar = () => {
             </button>
           </nav>
         </motion.div>
-      ) : null}
-    </motion.header>
+      </motion.header>
+        {isOpen ? (
+          <motion.div
+            className="min-w-[70vw] z-30 flex flex-col justify-between items-center 
+          fixed top-1/2 left-1/2 !-translate-x-1/2  !-translate-y-1/2
+           bg-dark/95 dark:bg-light/95 backdrop-blur-md py-32 
+          lg:py-12 dark:text-dark text-light "
+            initial={{ opacity: 0, x: "-50%", y: "-50%", scale:0}}
+            animate={{scale:1, opacity: 1, transition:{duration:0.2, ease:"easeIn"} }}
+          >
+            <nav className="flex flex-col justify-center items-center text-center">
+              <CustomlinkMobile
+                href="Home-section"
+                title="Home"
+                className="my-2"
+                handelHamburgerClick={handelHamburgerClick}
+              />
+              <CustomlinkMobile
+                href="About-section"
+                title="About"
+                className="my-2"
+                handelHamburgerClick={handelHamburgerClick}
+                offset={-50}
+              />
+              <CustomlinkMobile
+                title="Experience"
+                href="Experience-section"
+                className="my-2"
+                handelHamburgerClick={handelHamburgerClick}
+                offset={-120}
+              />
+              <CustomlinkMobile
+                href="Projects-section"
+                title="Projects"
+                className="my-2"
+                handelHamburgerClick={handelHamburgerClick}
+              />
+            </nav>
+            <nav className="flex justify-center items-center mt-2">
+              <motion.a
+                href="/"
+                target="_blank"
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.9 }}
+                className="w-6 mx-3 sm:mx-1 "
+              >
+                <LinkedInIcon />
+              </motion.a>
+              <motion.a
+                href="/"
+                target="_blank"
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.9 }}
+                className="w-6 mx-3 sm:mx-1 "
+              >
+                <GithubIcon />
+              </motion.a>
+              <motion.a
+                href="/"
+                target="_blank"
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.9 }}
+                className="w-6 mx-3 sm:mx-1 "
+              >
+                <TwitterIcon />
+              </motion.a>
+
+              <button
+                className={`ml-3 flex items-center justify-center rounded-full p-1
+               ${
+                 mode === "light" ? "bg-dark text-light" : "bg-light text-dark"
+               }`}
+                onClick={() => setMode(mode === "light" ? "dark" : "light")}
+              >
+                {mode === "dark" ? (
+                  <SunIcon className={"fill-dark"} />
+                ) : (
+                  <MoonIcon className={"fill-dark"} />
+                )}
+              </button>
+            </nav>
+          </motion.div>
+        ) : null}
+    </>
   );
 };
 

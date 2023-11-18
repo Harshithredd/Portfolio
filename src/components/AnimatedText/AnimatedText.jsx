@@ -30,14 +30,15 @@ const singleWord = {
 const AnimatedText = ({ text, className = "" }) => {
   return (
     <div
-      className={`w-full mx-auto py-2 flex items-center justify-center text-center overflow-x-hidden `}
+      className={`w-full mx-auto py-2 flex items-center justify-center text-center overflow-hidden`}
     >
       <motion.h1
         className={`inline-block text-dark font-bold w-full capitalize text-8xl
           ${className}  dark:text-light `}
         variants={headingAnimation}
+        whileInView="animate"
         initial="initial"
-        animate="animate"
+        viewport={{once:true}}
       >
         {text.split(" ").map((word, index) => {
           return (
