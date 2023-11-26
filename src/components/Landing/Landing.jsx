@@ -27,15 +27,15 @@ const Landing = () => {
             </div> */}
             <div className=" flex flex-col items-start justify-start lg:w-full w-full">
               <RuberBandText
-                className=" !text-8xl xl:!text-7xl  lg:!text-6xl md:!text-6xl sm:!text-5xl xs:!text-3xl"
+                className=" !text-8xl xl:!text-7xl  lg:!text-6xl md:!text-6xl sm:!text-5xl xs:!text-5xl"
                 text={"Hi,"}
               />
               <RuberBandText
-               className=" !text-8xl xl:!text-7xl  lg:!text-6xl md:!text-6xl sm:!text-5xl xs:!text-3xl"
+               className=" !text-8xl xl:!text-7xl  lg:!text-6xl md:!text-6xl sm:!text-5xl xs:!text-4xl"
                 text={"I'm Harshith"}
               />
               <RuberBandText
-                className=" !text-8xl xl:!text-7xl  lg:!text-6xl md:!text-6xl sm:!text-5xl xs:!text-3xl"
+                className=" !text-8xl xl:!text-7xl  lg:!text-6xl md:!text-6xl sm:!text-5xl xs:!text-4xl"
                 text={"Web Developer"}
               />
               {/* <p className="my-4 mx-0 mx-32 text-base font-medium md:text-sm sm:text-xs">
