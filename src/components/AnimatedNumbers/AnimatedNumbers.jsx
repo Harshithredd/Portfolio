@@ -17,7 +17,6 @@ const AnimatedNumbers = ({ value }) => {
     useEffect(() => {
       springValue.on("change", (latest) => {
         if (ref.current && latest.toFixed(0) <= value) {
-          console.log("ref.current.textContent ==>", ref.current.textContent);
           ref.current.textContent = latest.toFixed(0);
         }
       });

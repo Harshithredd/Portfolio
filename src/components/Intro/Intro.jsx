@@ -58,7 +58,7 @@ export default function Intro() {
       variants={slideUp}
       initial="initial"
       exit="exit"
-      className="h-[100vh] w-[100vw] flex justify-center items-center fixed z-[99] bg-[#141516] "
+      className="h-[100vh] w-[100vw] flex justify-center items-center fixed z-[99] bg-black dark:bg-light "
     >
       {dimension.width > 0 && (
         <>
@@ -66,15 +66,15 @@ export default function Intro() {
             variants={opacity}
             initial="initial"
             animate="enter"
-            className="flex text-light text-4xl items-center absolute z-40"
+            className="flex text-light dark:text-black text-4xl items-center absolute z-40"
           >
-            <span className="block w-3 h-3 bg-light rounded-[50%] mr-3 ">
+            <span className="block w-3 h-3 bg-light dark:bg-dark rounded-[50%] mr-3 ">
             </span>
            {words[index]}
           </motion.p>
           <svg className=" w-[100%] absolute top-0 h-[calc(100%+300px)]">
             <motion.path
-            className={'fill-black'}
+            className={'fill-black dark:fill-light'}
               variants={curve}
               initial="initial"
               exit="exit"
