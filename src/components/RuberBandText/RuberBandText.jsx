@@ -7,7 +7,7 @@ const RuberBandText = ({ text, className = "" }) => {
 
   return (
     <div
-      className={`w-full mx-auto py-2 flex items-center justify-start  overflow-hidden `}
+      className={`w-full mx-auto md:py-1 py-2 flex items-center justify-start  overflow-hidden `}
     >
       {sentence.map((letter, index) => {
         return (
@@ -18,7 +18,7 @@ const RuberBandText = ({ text, className = "" }) => {
               letter === "H"
                 ? `dark:[text-shadow:_5px_5px_0px_rgb(182_62_150/_100%)] dark:md:[text-shadow:_2px_2px_0px_rgb(182_62_150/_100%)]
                 [text-shadow:_4px_4px_0px_rgb(88_230_217/_100%)] md:[text-shadow:_2px_2px_0px_rgb(88_230_217/_100%)]
-                font-outline-2 md:font-outline-1 dark:font-outline-black-2 dark:md:font-outline-1` 
+                font-outline-2 md:font-outline-1 dark:font-outline-black-2 dark:md:font-outline-black-1` 
                 : null
             }`}
           >
