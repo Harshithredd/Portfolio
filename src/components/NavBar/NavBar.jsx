@@ -90,7 +90,7 @@ const NavBar = () => {
     setIsOpen(!isOpen);
   };
 
-  const handleScroll = () => {
+  const handleScroll = () => {  
     const currenttScrollPos = window.scrollY;
     if (currenttScrollPos > prevScrollPos) {
       setShow(false);
@@ -100,8 +100,16 @@ const NavBar = () => {
     setPreviousScrollPos(currenttScrollPos);
   };
 
+  const handleResize = ()=>{
+    if(window.outerWidth > '1023'){
+      setIsOpen(false);
+    } 
+  }
+
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize);
+
     return () => window.removeEventListener("scroll", handleScroll);
   });
 
@@ -142,7 +150,7 @@ const NavBar = () => {
               href="About-section"
               title="About"
               className="mx-4"
-              offset={-150}
+              offset={50}
             />
             <Customlink
               href="Experience-section"
