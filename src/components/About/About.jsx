@@ -6,12 +6,12 @@ import { Education } from "../Education";
 import Image from "next/image";
 import { AnimatedText } from "../AnimatedText";
 import { Layout } from "../Layout";
-import profilePicCover from "../../../public/images/profile/developer-pic-2.jpg";
+import profilePicCover from "../../../public/images/profile/Profile_1.jpg";
 
 const About = () => {
   return (
     <div id="About-section">
-      <Layout className="!pt-0">
+      <Layout className="md:!pt-0">
         <AnimatedText
           text="Passion Fuels Purpose! "
           className="mb-16 lg:!text-7xl sm:!text-6xl xs:!text-4xl sm:!mb-8 "
