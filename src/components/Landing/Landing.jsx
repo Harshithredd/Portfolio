@@ -4,12 +4,13 @@ import { AnimatedText } from "@/components/AnimatedText";
 import Link from "next/link";
 import { LinkArrow } from "@/components/Icons/Icons";
 import { RuberBandText } from '../RuberBandText';
+import ScrollDown from '../ScrollDown/ScrollDown';
 
 
 const Landing = () => {
   return (
     <div
-        className="flex items-center text-dark w-full min-h-screen  dark:text-light"
+        className="flex items-center text-dark w-full min-h-screen dark:text-light relative"
         id="Home-section"
       >
         <Layout className="">
@@ -70,6 +71,7 @@ const Landing = () => {
             </div>
           </div>
         </Layout>
+        <ScrollDown offset={-80}/>
       </div>
   )
 }
