@@ -12,12 +12,12 @@ const ProjectsWrapper = () => {
   return (
     <div
       id="Projects-section"
-      className="w-full mb-16 flex flex-col items-center justify-center dark:text-light overflow-x-hidden"
+      className="w-full mb-16 lg:mt-0 lg:pt-0 flex flex-col items-center justify-center dark:text-light overflow-x-hidden"
     >
-      <Layout className="pt-16">
+      <Layout className="pt-2">
         <AnimatedText
           text="Imagination Trumps Knowledge!"
-          className="m-16 lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-4xl"
+          className="m-16 !mt-0 mb-32 lg:mb-16 lg:!text-7xl md:mb-8 sm:!text-6xl xs:!text-4xl"
         />
         <div className="grid grid-cols-12 gap-24 gap-y-32 xl:gap-x-16 lg:gap-x-8 md:gap-y-24 sm:gap-x-0">
           <div className="col-span-12">
