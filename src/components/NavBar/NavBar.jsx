@@ -110,7 +110,10 @@ const NavBar = () => {
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", handleResize);
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
+    }
   });
 
   return (
@@ -162,7 +165,7 @@ const NavBar = () => {
               href="Projects-section"
               title="Projects"
               className="mx-4"
-              offset={0}
+              offset={-100}
             />
           </nav>
           <nav className="flex justify-center items-center">
@@ -229,20 +232,21 @@ const NavBar = () => {
                 title="About"
                 className="my-2"
                 handelHamburgerClick={handelHamburgerClick}
-                offset={-50}
+                offset={-80}
               />
               <CustomlinkMobile
                 title="Experience"
                 href="Experience-section"
                 className="my-2"
                 handelHamburgerClick={handelHamburgerClick}
-                offset={-120}
+                offset={-100}
               />
               <CustomlinkMobile
                 href="Projects-section"
                 title="Projects"
                 className="my-2"
                 handelHamburgerClick={handelHamburgerClick}
+                offset={-70}
               />
             </nav>
             <nav className="flex justify-center items-center mt-2">

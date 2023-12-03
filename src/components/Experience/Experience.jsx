@@ -50,7 +50,7 @@ const Experience = () => {
   });
   return (
     <>
-      <div className="my-64" id="Experience-section">
+      <div className="my-64 lg:!my-40" id="Experience-section">
         <AnimatedText
           className="font-bold text-8xl mb-32 w-full text-center dark:text-light
        lg:!text-7xl sm:!text-6xl xs:!text-4xl sm:!mb-8"

@@ -1,0 +1,59 @@
+// .scrollButton::after,.scrollButton::before{
+//     height: 1rem;
+//     width: 1rem;
+//     border: solid 1px black;
+//     content: '';
+//     position: absolute;
+//     transform: translate(-50%, -50%) rotate(45deg);
+//     left: 50%;
+//     top: 20%;
+//     border-top: hidden;
+//     border-left: hidden;
+//     animation: scroll-down 1s ease-in-out infinite;
+// }
+
+.scrollButton::after,.scrollButton::before{
+    height: 0.2rem;
+    width: 0.2rem;
+    border-radius: 50%;
+    border: solid 0.2rem rgba(0, 0, 0, 0.24);
+    content: '';
+    position: absolute;
+    transform: translate(-50%, -50%) rotate(45deg);
+    left: 50%;
+    top: 20%;
+    border-top: hidden;
+    border-left: hidden;
+    animation: scroll-down 1.5s ease-in-out infinite;
+}
+
+// .scrollButton::after{
+//     top: 40% !important;
+//     animation-delay: 0.3s;
+   
+// }
+
+@keyframes scroll-down {
+    0%{
+        opacity: 0;
+    }
+    30%{
+        opacity: 1;
+    }
+    60%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        top: 80%;
+    }
+}
+
+@media screen and (min-width : 768px) {
+    .scrollButton::after,.scrollButton::before{
+    height: 0.2rem;
+    width: 0.2rem;
+    border: solid 0.2rem rgba(0, 0, 0, 0.10);
+    }
+    
+}
