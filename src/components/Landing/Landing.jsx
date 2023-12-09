@@ -1,16 +1,16 @@
-import React from 'react'
+import React from "react";
 import { Layout } from "@/components/Layout";
 import { AnimatedText } from "@/components/AnimatedText";
 import Link from "next/link";
 import { LinkArrow } from "@/components/Icons/Icons";
-import { RuberBandText } from '../RuberBandText';
-import ScrollDown from '../ScrollDown/ScrollDown';
-
+import { RuberBandText } from "../RuberBandText";
+import ScrollButton from "../ScrollButton/ScrollButton";
 
 const Landing = () => {
   return (
-    <div
-        className="flex items-center text-dark w-full min-h-screen dark:text-light relative"
+    <>
+      <div
+        className="flex items-center text-dark w-full min-h-screen dark:text-light"
         id="Home-section"
       >
         <Layout className="">
@@ -24,15 +24,15 @@ const Landing = () => {
                 sizes="(max-width: 768px) 100vw,
                 (max-width: 1200px) 100vw,
                 100vw"
-              />
+              />  
             </div> */}
-            <div className=" flex flex-col items-start justify-start lg:w-full w-full">
+            <div className=" flex flex-col items-start justify-start lg:w-full w-full overflow-hidden">
               <RuberBandText
                 className=" !text-8xl xl:!text-7xl  lg:!text-6xl md:!text-6xl sm:!text-5xl xs:!text-5xl"
                 text={"Hi,"}
               />
               <RuberBandText
-               className=" !text-8xl xl:!text-7xl  lg:!text-6xl md:!text-6xl sm:!text-5xl xs:!text-4xl"
+                className=" !text-8xl xl:!text-7xl  lg:!text-6xl md:!text-6xl sm:!text-5xl xs:!text-4xl"
                 text={"I'm Harshith"}
               />
               <RuberBandText
@@ -71,9 +71,12 @@ const Landing = () => {
             </div>
           </div>
         </Layout>
-        <ScrollDown offset={-50} direction='scrollDown'/>
+        {/* <ScrollDown offset={-50} direction='scrollDown'/> */}
       </div>
-  )
-}
+      <ScrollButton type={"down"}/>
+      <ScrollButton type={"up"}/>
+    </>
+  );
+};
 
-export default Landing
+export default Landing;

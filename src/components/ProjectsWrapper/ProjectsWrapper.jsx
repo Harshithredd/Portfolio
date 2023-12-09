@@ -8,7 +8,6 @@ import projectCoverXflix from "../../../public/images/projects/Xflix.png";
 import projectCoverQkart from "../../../public/images/projects/Qkart.png";
 import projectCoverXboard from "../../../public/images/projects/Xboard.png";
 import projectCoverAdmin from "../../../public/images/projects/AdminPage.png";
-import ScrollUp from "../ScrollUp/ScrollUp";
 
 const ProjectsWrapper = () => {
   return (
@@ -79,7 +78,6 @@ const ProjectsWrapper = () => {
           </div>
         </div>
       </Layout>
-     {/* <ScrollUp/> */}
     </div>
   );
 };
