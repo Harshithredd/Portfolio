@@ -29,12 +29,6 @@ const Logo = () => {
                 justify-center flex cursor-pointer"
       >
         <motion.h4
-          style={{
-            background:
-              "linear-gradient(to right, #ffffff 0%, #ffffff 5%, #0B132A 5%, #0B132A 100%)",
-            "background-clip": "text",
-            "-webkit-background-clip": "text",
-          }}  
           whileHover={{ y: -2 }}
           whileTap={{ scale: 0.9 }}
           className="font-bold"

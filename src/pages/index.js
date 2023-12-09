@@ -28,8 +28,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logoBg.ico"/>
       </Head>
-      <AnimatePresence mode="wait">{isLoading && <Intro />}</AnimatePresence>
-      <TransitionEffectVertical />
+      {/* <AnimatePresence mode="wait">{isLoading && <Intro />}</AnimatePresence> */}
       <Landing />
       <About />
       <ProjectsWrapper />
