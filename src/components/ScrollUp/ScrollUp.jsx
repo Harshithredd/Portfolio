@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
-import style from "./ScrollDown.module.scss";
+import style from "./ScrollUp.module.scss";
 
 const navVariants = {
   show: {
@@ -12,15 +12,15 @@ const navVariants = {
   },
 };
 
-const ScrollDown = ({ offset, direction }) => {
-  const [show, setShow] = useState(true);
+const ScrollUp = ({ offset, direction }) => {
+  const [showUp, setShowUp] = useState(false);
 
   const handleScroll = () => {
     const currenttScrollPos = window.scrollY;
     if (currenttScrollPos > 400) {
-      setShow(false);
+      setShowUp(true);
     } else {
-      setShow(true);
+      setShowUp(false);
     }
   };
 
@@ -34,30 +34,28 @@ const ScrollDown = ({ offset, direction }) => {
 
   return (
     <motion.div
-      id="scrollDown"
-      animate={show ? "show" : "hide"}
+      animate={showUp ? "show" : "hide"}
       variants={navVariants}
+      id="scrollUp"
     >
       <Link
-        className={`flex
+        className={`flex 
             z-20  cursor-pointer flex-col transition-all`}
-        to={"About-section"}
+        to={"Home-section"}
         spy={true}
         offset={offset}
         duration={500}
         smooth={true}
       >
         <span
-          className={`absolute !-translate-x-1/2 bottom-20 left-1/2 w-8 h-16 md:border-[0.15rem] 
-            border-[0.2rem] border-dark/20 inline-block rounded-full 
-            dark:border-light/20
-            ${style.scrollButton} dark:before:border-light/20 dark:after:border-light/20
-            hover:border-primary/50 dark:hover:border-primaryDark/50
-            hover:after:border-primary/50 dark:after:hover:border-primaryDark/50`}
+          className={`absolute !-translate-x-1/2 left-1/2 w-8 h-16 md:border-[0.15rem] 
+        border-[0.2rem] border-dark/20 inline-block rounded-full cursor-pointer
+        dark:border-light/20
+        ${style.scrollButtonUp} dark:before:border-light/20 dark:after:border-light/20`}
         ></span>
       </Link>
     </motion.div>
   );
 };
 
-export default ScrollDown;
+export default ScrollUp;

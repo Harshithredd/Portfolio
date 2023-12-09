@@ -34,9 +34,9 @@ const Logo = () => {
               "linear-gradient(to right, #ffffff 0%, #ffffff 5%, #0B132A 5%, #0B132A 100%)",
             "background-clip": "text",
             "-webkit-background-clip": "text",
-          }}
-          animate={{ backgroundSize: "10000px" }}
-          transition={{ duration: 3 }}
+          }}  
+          whileHover={{ y: -2 }}
+          whileTap={{ scale: 0.9 }}
           className="font-bold"
         >
           <span

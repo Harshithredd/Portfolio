@@ -71,7 +71,7 @@ const Landing = () => {
             </div>
           </div>
         </Layout>
-        <ScrollDown offset={-80}/>
+        <ScrollDown offset={-50} direction='scrollDown'/>
       </div>
   )
 }
