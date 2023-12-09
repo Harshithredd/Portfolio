@@ -217,7 +217,7 @@ const NavBar = () => {
           fixed top-1/2 left-1/2 !-translate-x-1/2  !-translate-y-1/2
            bg-dark/95 dark:bg-light/95 backdrop-blur-md py-32 
           lg:py-12 dark:text-dark text-light "
-            initial={{ opacity: 0, x: "-50%", y: "-50%", scale:0}}
+            initial={{ opacity: 0, x: "-50%", y: "-50%", scale:0}}  
             animate={{scale:1, opacity: 1, transition:{duration:0.2, ease:"easeIn"} }}
           >
             <nav className="flex flex-col justify-center items-center text-center">
