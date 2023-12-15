@@ -176,7 +176,7 @@ const NavBar = () => {
               whileTap={{ scale: 0.9 }}
               className="w-6 mx-3"
             >
-              <LinkedInIcon />
+              <LinkedInIcon className={` dark:!fill-light fill-dark`}/>
             </motion.a>
             <motion.a
               href="https://github.com/Harshithredd"
@@ -194,7 +194,7 @@ const NavBar = () => {
               whileTap={{ scale: 0.9 }}
               className="w-6 mx-3"
             >
-              <TwitterIcon />
+              <TwitterIcon className={` dark:!fill-light fill-dark`}/>
             </motion.a>
 
             <button
@@ -249,33 +249,33 @@ const NavBar = () => {
                 offset={-70}
               />
             </nav>
-            <nav className="flex justify-center items-center mt-2">
+            <nav className="flex justify-center w-full items-center mt-2">
               <motion.a
-                href="/"
+                  href="https://www.linkedin.com/in/harshith-g-s-496636204/"
                 target="_blank"
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.9 }}
-                className="w-6 mx-3 sm:mx-1 "
+                className="w-6 mx-5 sm:mx-2 "
               >
-                <LinkedInIcon />
+                <LinkedInIcon className={` dark:!fill-dark fill-light`}/>
               </motion.a>
               <motion.a
-                href="/"
+                 href="https://github.com/Harshithredd"
                 target="_blank"
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.9 }}
-                className="w-6 mx-3 sm:mx-1 "
+                className="w-6 mx-5 sm:mx-2"
               >
                 <GithubIcon />
               </motion.a>
               <motion.a
-                href="/"
+                href="https://twitter.com/Harsheeeh"
                 target="_blank"
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.9 }}
-                className="w-6 mx-3 sm:mx-1 "
+                className="w-6 mx-5 sm:mx-2 "
               >
-                <TwitterIcon />
+                <TwitterIcon className={` dark:!fill-dark fill-light`}/>
               </motion.a>
 
               <button

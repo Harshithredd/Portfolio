@@ -74,7 +74,7 @@ const ScrollButton = ({ offset, type }) => {
           transition={{ type: "spring" }}
           whileHover={{ y: -2 }}
           whileTap={{ scale: 0.9 }}
-          className={`fixed md:h-8 top-[90%] right-[2%] z-40`}
+          className={`fixed md:h-8 bottom-[5%] right-[2%] z-40`}
         >
           <Link
             className={`z-20  cursor-pointer`}
