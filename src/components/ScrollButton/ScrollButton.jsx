@@ -9,10 +9,8 @@ import {
 const upVariants = {
   show: {
     opacity: 1,
-    right: "3%",
   },
   hide: {
-    right: "-20%",
     opacity: 0,
     display: "none",
   },
@@ -55,7 +53,7 @@ const ScrollButton = ({ offset, type }) => {
           transition={{ type: "spring" }}
           whileHover={{ y: -2 }}
           whileTap={{ scale: 0.9 }}
-          className={`absolute md:h-8 top-[90%] z-50`}
+          className={`absolute md:h-8 top-[90%]  right-[2%]  z-50`}
         >
           <Link
             className={`z-20  cursor-pointer `}
@@ -76,7 +74,7 @@ const ScrollButton = ({ offset, type }) => {
           transition={{ type: "spring" }}
           whileHover={{ y: -2 }}
           whileTap={{ scale: 0.9 }}
-          className={`fixed md:h-8 top-[90%] z-50`}
+          className={`fixed md:h-8 top-[90%] right-[2%] z-40`}
         >
           <Link
             className={`z-20  cursor-pointer`}
