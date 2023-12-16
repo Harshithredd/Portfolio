@@ -37,7 +37,6 @@ const ScrollButton = ({ offset, type }) => {
   };
 
   useEffect(()=>{
-    console.log(window.innerWidth)
     if(window.innerWidth <758) {
       setMobile(true);
     }else{
