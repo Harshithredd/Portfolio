@@ -19,6 +19,7 @@ const upVariants = {
 const ScrollButton = ({ offset, type }) => {
   const [show, setShow] = useState(true);
   const [showUp, setShowUp] = useState(false);
+  const [mobile,setMobile] = useState(false);
 
   const handleScroll = () => {
     const currenttScrollPos = window.scrollY;
@@ -34,6 +35,15 @@ const ScrollButton = ({ offset, type }) => {
       setShowUp(false);
     }
   };
+
+  useEffect(()=>{
+    console.log(window.innerWidth)
+    if(window.innerWidth <758) {
+      setMobile(true);
+    }else{
+      setMobile(false)
+    }
+  },[])
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -59,7 +69,7 @@ const ScrollButton = ({ offset, type }) => {
             className={`z-20  cursor-pointer `}
             to={"About-section"}
             spy={true}
-            offset={-60}
+            offset={Number(`${mobile ? -70 : 10}`)}
             duration={500}
             smooth={true}
           >

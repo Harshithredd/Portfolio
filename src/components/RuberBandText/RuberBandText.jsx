@@ -22,6 +22,9 @@ const RuberBandText = ({ sentence, className = "" }) => {
 
   return (
     <motion.div
+      initial={{ display: "hidden" }}
+      animate={{ display: "block" }}
+      transition={{delay:2}}
       className={`w-full mx-auto md:py-1 py-2 flex justify-center flex-col items-start  overflow-hidden `}
     >
       <motion.span

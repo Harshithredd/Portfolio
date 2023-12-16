@@ -32,10 +32,10 @@ export default function Home() {
       {!isLoading &&
         <>
           <Landing />
-          <About />
-          <ProjectsWrapper />
         </>
       }
+      <About />
+      <ProjectsWrapper />
     </>
   );
 }
