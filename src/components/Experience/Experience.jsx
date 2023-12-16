@@ -36,7 +36,14 @@ const Details = ({ position, company, companyLink, time, address, work }) => {
         >
           {time} | {address}
         </span>
-        <p className="font-medium w-full dark:text-light md:text-sm">{work}</p>
+        {work.split(".").map((task, index) => (
+          <p
+            key={index}
+            className="font-medium w-full dark:text-light md:text-sm"
+          >
+            &#8226; {task}
+          </p>
+        ))}
       </motion.div>
     </li>
   );
@@ -54,7 +61,7 @@ const Experience = () => {
         <AnimatedText
           className="font-bold text-8xl mb-32 w-full text-center dark:text-light
        lg:!text-7xl sm:!text-6xl xs:!text-4xl sm:!mb-8"
-        text="Experience"
+          text="Experience"
         />
         <div className="w-[75%] mx-auto relative lg:w-[90%] md:w-full ">
           <motion.div
@@ -71,7 +78,16 @@ const Experience = () => {
               companyLink="https://www.publicisresources.com/"
               time="Mar 2023- Present"
               address="Bangalore"
-              work={`Worked on a team responsible for developing Alumni portal as a sas for clients`}
+              work={`
+                 Contributed to successfully develop the Front end of the alumni package application within the designated time frame
+                and onboard an agency onto it.
+                Significantly enhanced the performance of the alumni package Initial load time by 40%.
+                Implemented caching using Redis cache, and using a CDN to serve static assets closer to users, reducing latency.
+                Leveraged dynamic imports of Next.js, react lazy loading, and lazySizes library, reducing the initial bundle size.
+                Implemented user-friendly feed section enabling post, edit, and deleting feed items, with reactions and comments section.
+                Collaborated closely with the design team in creating and developing Alumni Admin pages to send invites to alumni.
+                Contributed to Marcel-Component-Library repository to create re-usable components
+              `}
             />
             <Details
               position=" Systems Engineer"
@@ -79,12 +95,15 @@ const Experience = () => {
               companyLink="http://www.infosys.com/"
               time=" Feb 2021– Nov 2022"
               address="Bangalore"
-              work={` As part of Software Quality Management- Automation Production Verification (SQM-APV) Team, Involved in Devel
+              work={` 
+              As part of Software Quality Management - Automation Production Verification (SQM-APV) Team, Involved in Devel-
               opment, Execution and Maintenance of Automation Test Scripts.
-               Developed Automation Scripts of functional testing for a Financial services company using TestNG and Selenium.
-               Created and enhanced numerous test scripts to handle changes in the objects, in the tested application’s GUI, and in
-               the testing environment using Selenium WebDriver and increased script stability by 15 %.
-               Analyzed the Business Requirements Document, put ideas into Test Plan and prepared Test Cases for new functionalities.
+              Developed Automation Scripts of functional testing for a Financial services company using TestNG and Selenium.
+              Created and enhanced numerous test scripts to handle changes in the objects, in the tested application’s GUI, and in
+              the PROD environment using Selenium WebDriver and increased script stability by 15 %.
+              Analyzed the Business Requirements Document, put ideas into Test Plan and prepared Test Cases for new functionalities.
+              Developed REST APIs, database schema for Bank Application.
+              Contributed in Developing the front-end of the Internal Testing tool, Dashboard to view and run test script jobs
                `}
             />
             <Details

@@ -13,7 +13,7 @@ const Landing = () => {
         className="flex items-center text-dark w-full min-h-screen dark:text-light"
         id="Home-section"
       >
-        <Layout className="">
+        <Layout className="xxs:!px-3">
           <div className="flex items-center justify-between w-full lg:flex-col">
             {/* <div className="w-1/2 md:w-full">
               <Image
@@ -29,16 +29,16 @@ const Landing = () => {
             <div className=" flex flex-col items-start justify-start lg:w-full w-full overflow-hidden">
               <RuberBandText
                 className=" !text-8xl xl:!text-7xl  lg:!text-6xl md:!text-6xl sm:!text-5xl xs:!text-5xl"
-                text={"Hi,"}
+                sentence={"Hi,_I'm Harshith_Web Developer"}
               />
-              <RuberBandText
+              {/* <RuberBandText
                 className=" !text-8xl xl:!text-7xl  lg:!text-6xl md:!text-6xl sm:!text-5xl xs:!text-4xl"
                 text={"I'm Harshith"}
               />
               <RuberBandText
                 className=" !text-8xl xl:!text-7xl  lg:!text-6xl md:!text-6xl sm:!text-5xl xs:!text-4xl"
                 text={"Web Developer"}
-              />
+              /> */}
               {/* <p className="my-4 mx-0 mx-32 text-base font-medium md:text-sm sm:text-xs">
                 As a skilled full-stack developer, I am dedicated to turning
                 ideas into innovative web applications. Explore my latest

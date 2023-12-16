@@ -48,23 +48,25 @@ const Skills = () => {
         </motion.div>
         <Skill name="HTML" x="-15vw" y="2vw" />
         <Skill name="CSS" x="-5vw" y="-10vw" />
-        <Skill name="Javascript" x="14vw" y="2vw" />
-        <Skill name="ReactJs" x="0vw" y="10vw" />
+        <Skill name="Javascript" x="20vw" y="2vw" />
+        <Skill name="ReactJs" x="0vw" y="12vw" />
         <Skill name="NextJS" x="-18vw" y="-15vw" />
         <Skill name="NodeJS" x="15vw" y="-12vw" />
         <Skill name="Redux" x="29vw" y="-5vw" />
-        <Skill name="Tailwind" x="0vw" y="-21vw" />
-        <Skill name="MongoDB" x="-25vw" y="15vw" />
-        <Skill name="ExpressJS" x="25vw" y="18vw" />
-        <Skill name="Java" x="14vw" y="13vw" />
+        <Skill name="Tailwind" x="-20vw" y="-32vw" />
+        <Skill name="MongoDB" x="-27vw" y="15vw" />
+        <Skill name="ExpressJS" x="26vw" y="20vw" />
+        <Skill name="Java" x="16vw" y="13vw" />
         <Skill name="Selenium" x="33vw" y="-19vw" />
-        <Skill name="TestNG" x="-37vw" y="10vw" />
+        <Skill name="TestNG" x="-37vw" y="8vw" />
         <Skill name="Jest" x="-28vw" y="-21vw" />
         <Skill name="GraphQl" x="-27vw" y="-4vw" />
-        <Skill name="TailwindCSS" x="-10vw" y="19vw" />
+        <Skill name="Git" x="-11vw" y="19vw" />
         <Skill name="Bootstrap" x="0vw" y="25vw" />
-        <Skill name="TailwindCSS" x="38vw" y="2vw" />
         <Skill name="Framer-motion" x="10vw" y="-29vw" />
+        <Skill name="Material-UI" x="-21vw" y="32vw" />
+        <Skill name="Jenkins" x="10vw" y="33vw" />
+        <Skill name="Docker" x="30vw" y="29vw" />
       </div>
     </>
   );
