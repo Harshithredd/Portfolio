@@ -6,6 +6,7 @@ import { Landing } from "@/components/Landing";
 import { useEffect, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import Intro from "@/components/Intro/Intro";
+import { Footer } from "@/components/Footer";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -32,10 +33,12 @@ export default function Home() {
       {!isLoading &&
         <>
           <Landing />
+          <About />
+          <ProjectsWrapper />
+          <Footer />
         </>
       }
-      <About />
-      <ProjectsWrapper />
+      
     </>
   );
 }
