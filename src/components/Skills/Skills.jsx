@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { AnimatedText } from "../AnimatedText";
 
@@ -23,6 +23,22 @@ const Skill = ({ name, x, y }) => {
 };
 
 const Skills = () => {
+   const [isMobile, setIsMobile] = useState(false);
+
+   const handleResize = ()=>{
+    if(window.innerWidth < 1024){
+      setIsMobile(true);
+    }else{
+      setIsMobile(false)
+    }
+  }
+
+   useEffect(()=>{  
+      window.addEventListener("resize",  window.addEventListener("resize", handleResize));
+
+      return () => window.removeEventListener("resize",  window.addEventListener("resize", handleResize));
+   });
+
   return (
     <>
       <AnimatedText
@@ -53,20 +69,20 @@ const Skills = () => {
         <Skill name="NextJS" x="-18vw" y="-15vw" />
         <Skill name="NodeJS" x="15vw" y="-12vw" />
         <Skill name="Redux" x="29vw" y="-5vw" />
-        <Skill name="Tailwind" x="-20vw" y="-32vw" />
         <Skill name="MongoDB" x="-27vw" y="15vw" />
-        <Skill name="ExpressJS" x="26vw" y="20vw" />
+        <Skill name="ExpressJS" x={`${ isMobile ? '26vw' : '32vw'}`} y={`${ isMobile ? '20vw' : '5vw'}`} />
         <Skill name="Java" x="16vw" y="13vw" />
         <Skill name="Selenium" x="33vw" y="-19vw" />
         <Skill name="TestNG" x="-37vw" y="8vw" />
         <Skill name="Jest" x="-28vw" y="-21vw" />
         <Skill name="GraphQl" x="-27vw" y="-4vw" />
-        <Skill name="Git" x="-11vw" y="19vw" />
+        <Skill name="Git" x={`${ isMobile ? '5vw' : '6vw'}`} y={`${ isMobile ? '-19vw' : '-17vw'}`} />
+        <Skill name="TailwindCSS" x={`${ isMobile ? '-20vw' : '-15vw'}`} y={`${ isMobile ? '-33vw' : '-26vw'}`} />
         <Skill name="Bootstrap" x="0vw" y="25vw" />
-        <Skill name="Framer-motion" x="10vw" y="-29vw" />
-        <Skill name="Material-UI" x="-21vw" y="32vw" />
-        <Skill name="Jenkins" x="10vw" y="33vw" />
-        <Skill name="Docker" x="30vw" y="29vw" />
+        <Skill name="Framer-motion" x={`${ isMobile ? '10vw' : '13vw'}`} y={`${ isMobile ? '-29vw' : '-24vw'}`} />
+        <Skill name="Material-UI"  x={`${ isMobile ? '-21vw' : '-20vw'}`} y={`${ isMobile ? '32vw' : '22vw'}`} />
+        <Skill name="Jenkins"  x={`${ isMobile ? '10vw' : '12vw'}`} y={`${ isMobile ? '33vw' : '22vw'}`}/>
+        <Skill name="Docker" x={`${ isMobile ? '30vw' : '31vw'}`} y={`${ isMobile ? '29vw' : '18vw'}`}/>
       </div>
     </>
   );
