@@ -4,13 +4,17 @@ import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import Intro from "@/components/Intro/Intro";
+import { Landing } from "@/components/Landing";
+import { About } from "@/components/About";
+import ProjectsWrapper from "@/components/ProjectsWrapper/ProjectsWrapper";
+import { Footer } from "@/components/Footer";
 
-const Landing = dynamic(() => import("../components/Landing/Landing"));
-const About = dynamic(() => import("../components/About/About"));
-const ProjectsWrapper = dynamic(() =>
-  import("../components/ProjectsWrapper/ProjectsWrapper")
-);
-const Footer = dynamic(() => import("../components/Footer/Footer"));
+// const Landing = dynamic(() => import("../components/Landing/Landing"));
+// const About = dynamic(() => import("../components/About/About"));
+// const ProjectsWrapper = dynamic(() =>
+//   import("../components/ProjectsWrapper/ProjectsWrapper")
+// );
+// const Footer = dynamic(() => import("../components/Footer/Footer"));
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);

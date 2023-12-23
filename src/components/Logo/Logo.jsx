@@ -2,7 +2,7 @@ import React from "react";
 import { Link as ScrollLink } from "react-scroll";
 import Image from "next/image";
 import { motion } from "framer-motion";
-
+import logoIcon from '../../../public/logoBg.ico'
 const Logo = () => {
   // const colors = ["red", "green", "blue", "orange"]; // Add more colors as needed
   // const textVariants = {
@@ -27,19 +27,29 @@ const Logo = () => {
         smooth={true}
         className="w-30 h-10 text-dark items-center dark:text-light
                 justify-center flex cursor-pointer"
-        href=""
+        href={"Home-section"}
       >
         <motion.h4
           whileHover={{ y: -2 }}
           whileTap={{ scale: 0.9 }}
           className="font-bold"
         >
-          <span
+          <Image
+              src={logoIcon}
+              alt="Logo"
+              aria-label="LOGO"
+              className="w-full h-auto rounded-2xl "
+              priority
+              sizes="(max-width: 768px) 1.2rem,
+            (max-width: 1200px) 1.2rem,
+            1.2rem"
+            />
+          {/* <span
             className={`hover:text-primary dark:hover:text-primaryDark`}
           >
             H
           </span>
-          arshith Gangi Reddy
+          arshith Gangi Reddy */}
         </motion.h4>
       </ScrollLink>
     </div>
