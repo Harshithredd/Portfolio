@@ -1,7 +1,11 @@
 import React from "react";
 import { Layout } from "../Layout";
-import Link from "next/link";
+import { string } from "prop-types";
 
+/**
+ * Footer component
+ * @returns {React.Element} Element
+ **/
 const Footer = () => {
   return (
     <footer
@@ -19,5 +23,12 @@ const Footer = () => {
     </footer>
   );
 };
+
+Footer.propTypes ={
+
+}
+Footer.defaultProps ={
+  
+}
 
 export default Footer;

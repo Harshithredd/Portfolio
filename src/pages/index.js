@@ -1,12 +1,16 @@
 import Head from "next/head";
-import { About } from "@/components/About";
-import ProjectsWrapper from "@/components/ProjectsWrapper/ProjectsWrapper";
-import TransitionEffectVertical from "@/components/TransitionEffectVertical/TransitionEffectVertical";
-import { Landing } from "@/components/Landing";
+import dynamic from "next/dynamic";
+
 import { useEffect, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import Intro from "@/components/Intro/Intro";
-import { Footer } from "@/components/Footer";
+
+const Landing = dynamic(() => import("../components/Landing/Landing"));
+const About = dynamic(() => import("../components/About/About"));
+const ProjectsWrapper = dynamic(() =>
+  import("../components/ProjectsWrapper/ProjectsWrapper")
+);
+const Footer = dynamic(() => import("../components/Footer/Footer"));
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -30,15 +34,14 @@ export default function Home() {
         <link rel="icon" href="/logoBg.ico" />
       </Head>
       <AnimatePresence mode="wait">{isLoading && <Intro />}</AnimatePresence>
-      {!isLoading &&
+      {!isLoading && (
         <>
           <Landing />
           <About />
           <ProjectsWrapper />
           <Footer />
         </>
-      }
-      
+      )}
     </>
   );
 }

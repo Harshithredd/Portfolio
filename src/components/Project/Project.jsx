@@ -1,8 +1,8 @@
-import Link from 'next/link';
-import React from 'react'
-import { GithubIcon } from '../Icons/Icons';
-import Image from 'next/image';
-import {motion} from 'framer-motion'
+import Link from "next/link";
+import React from "react";
+import { GithubIcon } from "../Icons/Icons";
+import Image from "next/image";
+import { motion } from "framer-motion";
 
 const Project = ({ type, title, img, link, github, direction }) => {
   return (
@@ -17,10 +17,10 @@ const Project = ({ type, title, img, link, github, direction }) => {
       md:shadow-[8px_8px_0px_0px]
       lg:shadow-[12px_12px_0px_0px]
       xs:p-4"
-      initial={{ x: direction, visibility:"hidden"}}
-      whileInView={{ x: 0, visibility:"visible"}}
-      transition={{duration : 0.5 , type:'spring'}}
-      viewport={{once:true}}
+      initial={{ x: direction, visibility: "hidden" }}
+      whileInView={{ x: 0, visibility: "visible" }}
+      transition={{ duration: 0.5, type: "spring" }}
+      viewport={{ once: true }}
     >
       <Link
         href={link}
@@ -28,13 +28,13 @@ const Project = ({ type, title, img, link, github, direction }) => {
         className="w-full cursor-pointer overflow-hidden rounded-lg lg:w-full"
       >
         <Image
-          priority
           sizes="(max-width: 768px) 100vw,
         (max-width: 1200px) 50vw,
         50vw"
           src={img}
           alt={title}
-          className="w-full h-auto"
+          className="w-full h-auto lazyload"
+          loading="lazy"
         />
       </Link>
 
@@ -53,8 +53,10 @@ const Project = ({ type, title, img, link, github, direction }) => {
           target="_blank"
           className="hover:underline underline-offset-2"
         >
-          <h2 className="my-2 w-full text-left text-2xl font-bold dark:text-light
-          xs:text-sm">
+          <h2
+            className="my-2 w-full text-left text-2xl font-bold dark:text-light
+          xs:text-sm"
+          >
             {title}
           </h2>
         </Link>

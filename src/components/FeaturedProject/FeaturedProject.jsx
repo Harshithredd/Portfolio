@@ -24,10 +24,10 @@ const FeaturedProject = ({
         md:shadow-[8px_8px_0px_0px]
         lg:shadow-[12px_12px_0px_0px]
         lg:flex-col lg:p-8 xs:rounded-2xl xs:rounded-br-3xl xs:p-4"
-      initial={{ x: direction, visibility:"hidden"}}
-      whileInView={{ x: 0, visibility:"visible"}}
+      initial={{ x: direction, visibility: "hidden" }}
+      whileInView={{ x: 0, visibility: "visible" }}
       transition={{ duration: 1, type: "spring" }}
-      viewport={{once:true}}
+      viewport={{ once: true }}
     >
       <Link
         href={link}
@@ -37,11 +37,11 @@ const FeaturedProject = ({
         <Image
           src={img}
           alt={title}
-          className="w-full h-auto"
-          priority
+          className="w-full h-auto lazyload"
           sizes="(max-width: 768px) 100vw,
                 (max-width: 1200px) 50vw,
                 50vw"
+          loading="lazy"
         />
       </Link>
       <div

@@ -27,6 +27,7 @@ const Logo = () => {
         smooth={true}
         className="w-30 h-10 text-dark items-center dark:text-light
                 justify-center flex cursor-pointer"
+        href=""
       >
         <motion.h4
           whileHover={{ y: -2 }}

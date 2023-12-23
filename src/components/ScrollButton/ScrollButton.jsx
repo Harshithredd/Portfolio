@@ -70,6 +70,7 @@ const ScrollButton = ({ offset, type }) => {
             spy={true}
             offset={Number(`${mobile ? -70 : 10}`)}
             duration={500}
+            href={""}
             smooth={true}
           >
             <ArrowBoxDownIcon/>
@@ -77,7 +78,7 @@ const ScrollButton = ({ offset, type }) => {
         </motion.div>
       ) : (
         <motion.div
-          id="scrollDown"
+          id="scrollUp"
           animate={showUp ? "show" : "hide"}
           variants={upVariants}
           transition={{ type: "spring" }}
@@ -92,6 +93,7 @@ const ScrollButton = ({ offset, type }) => {
             offset={-60}
             duration={500}
             smooth={true}
+            href={""}
           >
             <ArrowBoxUpIcon />
           </Link>

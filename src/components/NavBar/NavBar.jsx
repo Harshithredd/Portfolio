@@ -11,7 +11,12 @@ import {
 } from "../Icons/Icons";
 import { motion } from "framer-motion";
 import useThemeSwitch from "../hooks/useThemeSwitch";
+import { func, number, string } from "prop-types";
 
+/**
+ * Custom Link component for Desktop view
+ * @returns {React.Element} Element
+ **/
 const Customlink = ({ href, title, offset, className = "" }) => {
   const router = useRouter();
   return (
@@ -21,7 +26,7 @@ const Customlink = ({ href, title, offset, className = "" }) => {
       offset={offset}
       duration={500}
       smooth={true}
-      // href={href}
+      href={href}
       className={`${className} relative group cursor-pointer `}
     >
       {title}
@@ -35,6 +40,24 @@ const Customlink = ({ href, title, offset, className = "" }) => {
   );
 };
 
+Customlink.propTypes = {
+  href: string,
+  title: string,
+  offset: number,
+  className: string,
+};
+
+Customlink.defaultProps = {
+  href: "",
+  title: "",
+  offset: 0,
+  className: "",
+};
+
+/**
+ * Custom Link component for Mobile view
+ * @returns {React.Element} Element
+ **/
 const CustomlinkMobile = ({
   href,
   title,
@@ -53,6 +76,7 @@ const CustomlinkMobile = ({
       to={href}
       spy={true}
       offset={offset}
+      href={href}
       duration={500}
       smooth={true}
       onClick={handleIsOpen}
@@ -69,6 +93,22 @@ const CustomlinkMobile = ({
   );
 };
 
+CustomlinkMobile.propTypes = {
+  href: string,
+  title: string,
+  offset: number,
+  className: string,
+  handelHamburgerClick: func,
+};
+
+CustomlinkMobile.defaultProps = {
+  href: "",
+  title: "",
+  offset: 0,
+  className: "",
+  handelHamburgerClick: () => null,
+};
+
 const navVariants = {
   show: {
     opacity: 1,
@@ -80,6 +120,10 @@ const navVariants = {
   },
 };
 
+/**
+ * Navigation component
+ * @returns {React.Element} Element
+ **/
 const NavBar = () => {
   const [mode, setMode] = useThemeSwitch();
   const [isOpen, setIsOpen] = useState(false);
@@ -90,7 +134,7 @@ const NavBar = () => {
     setIsOpen(!isOpen);
   };
 
-  const handleScroll = () => {  
+  const handleScroll = () => {
     const currenttScrollPos = window.scrollY;
     if (currenttScrollPos > prevScrollPos) {
       setShow(false);
@@ -100,11 +144,11 @@ const NavBar = () => {
     setPreviousScrollPos(currenttScrollPos);
   };
 
-  const handleResize = ()=>{
-    if(window.outerWidth > '1023'){
+  const handleResize = () => {
+    if (window.outerWidth > "1023") {
       setIsOpen(false);
-    } 
-  }
+    }
+  };
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -113,7 +157,7 @@ const NavBar = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleResize);
-    }
+    };
   });
 
   return (
@@ -124,6 +168,7 @@ const NavBar = () => {
       lg:backdrop-blur-0 top-0`}
       >
         <button
+        aria-label="ham menu button"
           className="flex-col justify-center items-center hidden lg:flex h-8 w-9 rounded-md bg-dark/90 dark:bg-light/90"
           onClick={handelHamburgerClick}
         >
@@ -176,7 +221,7 @@ const NavBar = () => {
               whileTap={{ scale: 0.9 }}
               className="w-6 mx-3"
             >
-              <LinkedInIcon className={` dark:!fill-light fill-dark`}/>
+              <LinkedInIcon className={` dark:!fill-light fill-dark`} />
             </motion.a>
             <motion.a
               href="https://github.com/Harshithredd"
@@ -194,10 +239,11 @@ const NavBar = () => {
               whileTap={{ scale: 0.9 }}
               className="w-6 mx-3"
             >
-              <TwitterIcon className={` dark:!fill-light fill-dark`}/>
+              <TwitterIcon className={` dark:!fill-light fill-dark`} />
             </motion.a>
 
             <button
+             aria-label='theme toggle'
               className={`ml-3 flex items-center justify-center rounded-full p-1
         ${mode === "light" ? "bg-dark text-light" : "bg-light text-dark"}`}
               onClick={() => setMode(mode === "light" ? "dark" : "light")}
@@ -211,89 +257,94 @@ const NavBar = () => {
           </nav>
         </motion.div>
       </motion.header>
-        {isOpen ? (
-          <motion.div
-            className="min-w-[70vw] z-30 flex flex-col justify-between items-center 
+      {isOpen ? (
+        <motion.div
+          className="min-w-[70vw] z-30 flex flex-col justify-between items-center 
           fixed top-1/2 left-1/2 !-translate-x-1/2  !-translate-y-1/2
            bg-dark/95 dark:bg-light/95 backdrop-blur-md py-32 
           lg:py-12 dark:text-dark text-light "
-            initial={{ opacity: 0, x: "-50%", y: "-50%", scale:0}}  
-            animate={{scale:1, opacity: 1, transition:{duration:0.2, ease:"easeIn"} }}
-          >
-            <nav className="flex flex-col justify-center items-center text-center">
-              <CustomlinkMobile
-                href="Home-section"
-                title="Home"
-                className="my-2"
-                handelHamburgerClick={handelHamburgerClick}
-              />
-              <CustomlinkMobile
-                href="About-section"
-                title="About"
-                className="my-2"
-                handelHamburgerClick={handelHamburgerClick}
-                offset={-80}
-              />
-              <CustomlinkMobile
-                title="Experience"
-                href="Experience-section"
-                className="my-2"
-                handelHamburgerClick={handelHamburgerClick}
-                offset={-100}
-              />
-              <CustomlinkMobile
-                href="Projects-section"
-                title="Projects"
-                className="my-2"
-                handelHamburgerClick={handelHamburgerClick}
-                offset={-70}
-              />
-            </nav>
-            <nav className="flex justify-center w-full items-center mt-2">
-              <motion.a
-                  href="https://www.linkedin.com/in/harshith-g-s-496636204/"
-                target="_blank"
-                whileHover={{ y: -2 }}
-                whileTap={{ scale: 0.9 }}
-                className="w-6 mx-5 sm:mx-2 "
-              >
-                <LinkedInIcon className={` dark:!fill-dark fill-light`}/>
-              </motion.a>
-              <motion.a
-                 href="https://github.com/Harshithredd"
-                target="_blank"
-                whileHover={{ y: -2 }}
-                whileTap={{ scale: 0.9 }}
-                className="w-6 mx-5 sm:mx-2"
-              >
-                <GithubIcon />
-              </motion.a>
-              <motion.a
-                href="https://twitter.com/Harsheeeh"
-                target="_blank"
-                whileHover={{ y: -2 }}
-                whileTap={{ scale: 0.9 }}
-                className="w-6 mx-5 sm:mx-2 "
-              >
-                <TwitterIcon className={` dark:!fill-dark fill-light`}/>
-              </motion.a>
+          initial={{ opacity: 0, x: "-50%", y: "-50%", scale: 0 }}
+          animate={{
+            scale: 1,
+            opacity: 1,
+            transition: { duration: 0.2, ease: "easeIn" },
+          }}
+        >
+          <nav className="flex flex-col justify-center items-center text-center">
+            <CustomlinkMobile
+              href="Home-section"
+              title="Home"
+              className="my-2"
+              handelHamburgerClick={handelHamburgerClick}
+            />
+            <CustomlinkMobile
+              href="About-section"
+              title="About"
+              className="my-2"
+              handelHamburgerClick={handelHamburgerClick}
+              offset={-80}
+            />
+            <CustomlinkMobile
+              title="Experience"
+              href="Experience-section"
+              className="my-2"
+              handelHamburgerClick={handelHamburgerClick}
+              offset={-100}
+            />
+            <CustomlinkMobile
+              href="Projects-section"
+              title="Projects"
+              className="my-2"
+              handelHamburgerClick={handelHamburgerClick}
+              offset={-70}
+            />
+          </nav>
+          <nav className="flex justify-center w-full items-center mt-2">
+            <motion.a
+              href="https://www.linkedin.com/in/harshith-g-s-496636204/"
+              target="_blank"
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.9 }}
+              className="w-6 mx-5 sm:mx-2 "
+            >
+              <LinkedInIcon className={` dark:!fill-dark fill-light`} />
+            </motion.a>
+            <motion.a
+              href="https://github.com/Harshithredd"
+              target="_blank"
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.9 }}
+              className="w-6 mx-5 sm:mx-2"
+            >
+              <GithubIcon />
+            </motion.a>
+            <motion.a
+              href="https://twitter.com/Harsheeeh"
+              target="_blank"
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.9 }}
+              className="w-6 mx-5 sm:mx-2 "
+            >
+              <TwitterIcon className={` dark:!fill-dark fill-light`} />
+            </motion.a>
 
-              <button
-                className={`ml-3 flex items-center justify-center rounded-full p-1
+            <button
+             aria-label='theme toggle'
+              className={`ml-3 flex items-center justify-center rounded-full p-1
                ${
                  mode === "light" ? "bg-dark text-light" : "bg-light text-dark"
                }`}
-                onClick={() => setMode(mode === "light" ? "dark" : "light")}
-              >
-                {mode === "dark" ? (
-                  <SunIcon className={"fill-dark"} />
-                ) : (
-                  <MoonIcon className={"fill-dark"} />
-                )}
-              </button>
-            </nav>
-          </motion.div>
-        ) : null}
+              onClick={() => setMode(mode === "light" ? "dark" : "light")}
+            >
+              {mode === "dark" ? (
+                <SunIcon className={"fill-dark"} />
+              ) : (
+                <MoonIcon className={"fill-dark"} />
+              )}
+            </button>
+          </nav>
+        </motion.div>
+      ) : null}
     </>
   );
 };
