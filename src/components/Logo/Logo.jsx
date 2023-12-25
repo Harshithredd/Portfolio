@@ -40,9 +40,9 @@ const Logo = () => {
               aria-label="LOGO"
               className="w-full h-auto rounded-2xl "
               priority
-              sizes="(max-width: 768px) 1.5rem,
-            (max-width: 1200px) 1.5rem,
-            1.5rem"
+              sizes="(max-width: 768px) 2rem,
+            (max-width: 1200px) 2rem,
+            2rem"
             />
           {/* <span
             className={`hover:text-primary dark:hover:text-primaryDark`}
