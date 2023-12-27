@@ -32,26 +32,6 @@ export default function Intro() {
     );
   }, [index]);
 
-  // const initialPath = `M0 0 L${dimension.width} 0 L${dimension.width} ${
-  //   dimension.height
-  // } Q${dimension.width / 2} ${dimension.height + 300} 0 ${
-  //   dimension.height
-  // }  L0 0`;
-  // const targetPath = `M0 0 L${dimension.width} 0 L${dimension.width} ${
-  //   dimension.height
-  // } Q${dimension.width / 2} ${dimension.height} 0 ${dimension.height}  L0 0`;
-
-  // const curve = {
-  //   initial: {
-  //     d: initialPath,
-  //     transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1] },
-  //   },
-  //   exit: {
-  //     d: targetPath,
-  //     transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1], delay: 0.3 },
-  //   },
-  // };
-
   return (
     <motion.div
       variants={slideUp}
@@ -70,14 +50,6 @@ export default function Intro() {
             <span className="block w-3 h-3 md:w-2 md:h-2 bg-white rounded-full mr-3 "></span>
             {words[index]}
           </motion.p>
-          <svg className=" w-[100%] absolute top-0 h-[calc(100%+300px)]">
-            <motion.path
-            className={'fill-black'}
-              // variants={curve}
-              // initial="initial"
-              // exit="exit"
-            ></motion.path>
-          </svg>
         </>
       )}
     </motion.div>
