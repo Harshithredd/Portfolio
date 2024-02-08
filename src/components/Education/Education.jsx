@@ -62,19 +62,19 @@ const Education = () => {
               type="Bachelor Of Engineering in Information Science"
               time="2016-2020"
               place="Acharya institute of technology"
-              info="7.91 CGPA."
+              info=""
             />
             <Details
               type="Class XII"
               time="2014-2016"
               place=" Sahyadri PU College"
-              info="90.5%"
+              info=""
             />
             <Details
               type="Class X"
               time="2013-2014"
               place="Jain International Residential School (JIRS)"
-              info="8.60 CGPA"
+              info=""
             />
           </ul>
         </div>
