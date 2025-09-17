@@ -73,10 +73,33 @@ const Experience = () => {
 
           <ul className="w-full flex flex-col items-start justify-between ml-4 xs:ml-2">
             <Details
+              position="Senior Software Engineer"
+              company="Nielsen Media"
+              companyLink="https://nielsen.com/"
+              time="Apr 2024- Present"
+              address="Bangalore"
+              work={`
+               Maintained and scaled a shared micro-frontend platform (IFL) supporting 100+ applications, implemented multi-React
+              version support, developed user-access-based loading screens, resolved critical widget rendering and screen load issues,
+              and optimized script loading to prevent duplicate DOM injections, reducing base load by 1 second.
+              Led integration of Heap analytics in IFL framework to enable analytics across all microfrontend applications, adding
+              browser APIs and custom browser interfaces to manage analytics per app.
+              Architected and Implemented Nielsen Creative and Encoding Platform with queue-based, resumable/parallel AWS S3
+              uploads, exponential backoff retries, byte-range downloads, error handling, and CI/CD pipelines via GitLab.
+              Designed and developed the frontend of Media Portal dashboard: consolidated client product access, app discovery, user
+              impersonation, and a workspace with file sharing and URL-based links
+              Modernized Nielsen’s Components Design System by delivering key reusable React 18 components, increasing developer
+              efficiency and UI consistency across projects.
+              Contributed and maintained a self-service admin app within the Media Application Framework (MAF), building key
+              screens for app details, screen lists, entry points, products, analytics panels, and a app list with search and filter features.
+              Led a team of 3 engineers, planning sprints and mentoring junior members, while resolving complex UI issues
+              `}
+            />
+            <Details
               position="Assosiate Technology-1"
               company="Publicis Re:sources"
               companyLink="https://www.publicisresources.com/"
-              time="Mar 2023- Present"
+              time="Mar 2023- Apr 2024"
               address="Bangalore"
               work={`
                  Contributed to successfully develop the Front end of the alumni package application within the designated time frame
@@ -98,12 +121,12 @@ const Experience = () => {
               work={` 
               As part of Software Quality Management - Automation Production Verification (SQM-APV) Team, Involved in Devel-
               opment, Execution and Maintenance of Automation Test Scripts.
+              Built and maintained React Dashboard to view, trigger amd schedule test script jobs on Production applications.
               Developed Automation Scripts of functional testing for a Financial services company using TestNG and Selenium.
               Created and enhanced numerous test scripts to handle changes in the objects, in the tested application’s GUI, and in
               the PROD environment using Selenium WebDriver and increased script stability by 15 %.
               Analyzed the Business Requirements Document, put ideas into Test Plan and prepared Test Cases for new functionalities.
               Developed REST APIs, database schema for Bank Application.
-              Contributed in Developing the front-end of the Internal Testing tool, Dashboard to view and run test script jobs
                `}
             />
             <Details

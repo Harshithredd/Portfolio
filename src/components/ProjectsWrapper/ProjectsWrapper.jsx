@@ -56,7 +56,7 @@ const ProjectsWrapper = () => {
             />
           </div>
 
-          <div className="col-span-6 sm:col-span-12">
+          {/* <div className="col-span-6 sm:col-span-12">
             <Project
               title="Xboard"
               type="Featured Prjoect"
@@ -75,7 +75,7 @@ const ProjectsWrapper = () => {
               github="https://github.com/Harshithredd/Admin_UI"
               direction="50%"
             />
-          </div>
+          </div> */}
         </div>
       </Layout>
     </div>

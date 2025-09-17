@@ -1,11 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Layout } from "@/components/Layout";
 import Link from "next/link";
 import { LinkArrow } from "@/components/Icons/Icons";
 import { RuberBandText } from "../RuberBandText";
-import profilePic from '../../../public/images/profile/developer-pic-1.png'
 import ScrollButton from "../ScrollButton/ScrollButton";
-import Image from "next/image";
 
 const Landing = () => {
   return (
@@ -16,17 +14,6 @@ const Landing = () => {
       >
         <Layout className="">
           <div className="flex items-center justify-between w-full lg:flex-col">
-            {/* <div className="w-1/2 md:w-full">
-              <Image
-                src={profilePic}
-                alt="home-dev-image"
-                className="w-full h-auto lg:hidden md:inline-block md:w-full"
-                priority
-                sizes="(max-width: 768px) 100vw,
-                (max-width: 1200px) 100vw,
-                100vw"
-              />  
-            </div> */}
             <div className=" flex flex-col items-start justify-start lg:w-full w-full overflow-hidden">
               <RuberBandText
                 className=" !text-8xl xl:!text-7xl  lg:!text-6xl md:!text-6xl sm:!text-5xl xs:!text-4xl xxs:!text-3xl"
@@ -64,7 +51,6 @@ const Landing = () => {
             </div>
           </div>
         </Layout>
-        {/* <ScrollDown offset={-50} direction='scrollDown'/> */}
       </div>
       <ScrollButton type={"down"}/>
       <ScrollButton type={"up"}/>
