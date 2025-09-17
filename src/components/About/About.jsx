@@ -30,7 +30,7 @@ const About = () => {
             <p className="font-medium">
               Hi, I&apos;m Harshith G S, a web developer with a passion for creating
               beautiful, functional, and user-centered digital experiences. With
-              2 years of experience in the field. I am always looking for new
+              4+ years of experience in the field. I am always looking for new
               and innovative ways to bring my client&apos;s visions to life.
             </p>
             <p className="font-medium my-4">
@@ -104,7 +104,7 @@ const About = () => {
                 className="inline-block text-7xl font-bold dark:text-light 
              md:text-6xl sm:text-5xl xs:text-4xl"
               >
-                <AnimatedNumbers value={2} />+
+                <AnimatedNumbers value={4} />+
               </span>
               <h2
                 className="text-xl font-medium capitalize text-dark/75 dark:text-light/75 
